@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحتي الخاصة</title>
+    
+    <!-- ربط ملف الـ Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#15803d">
+
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        #install-btn {
+            display: none;
+            background-color: #15803d;
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>مرحباً بك!</h1>
+        <p>اضغط على الزر بالأسفل لتثبيت هذه الصفحة كتطبيق على شاشة هاتفك.</p>
+        
+        <button id="install-btn">📲 تثبيت الصفحة على الهاتف</button>
+    </div>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+                .then(() => console.log('Service Worker Registered'));
+        }
+
+        let deferredPrompt;
+        const installBtn = document.getElementById('install-btn');
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            installBtn.style.display = 'block';
+        });
+
+        installBtn.addEventListener('click', async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                deferredPrompt = null;
+                installBtn.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
+
