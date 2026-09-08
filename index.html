@@ -50,26 +50,31 @@
         header {
             background: var(--ink);
             color: #f4f6f5;
-            padding: 26px 20px 22px;
+            padding: 12px 20px 10px;
             text-align: center;
             border-bottom: 3px solid var(--accent);
+            position: sticky;
+            top: 0;
+            z-index: 50;
         }
 
         header h1 {
-            font-size: 26px;
+            font-size: 18px;
             font-weight: 800;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
         }
 
         /* Navigation - Main Tabs */
         .main-nav {
             display: flex;
             justify-content: center;
-            gap: 4px;
-            padding: 0 20px;
+            gap: 2px;
+            padding: 0 14px;
             background-color: var(--ink);
             border-bottom: 1px solid #0c1519;
             flex-wrap: wrap;
+            position: sticky;
+            z-index: 49;
         }
 
         .main-tab {
@@ -77,22 +82,23 @@
             color: #a7b4b9;
             border: none;
             border-bottom: 3px solid transparent;
-            padding: 14px 22px;
-            font-size: 15px;
+            padding: 9px 16px;
+            font-size: 13.5px;
             font-weight: 700;
             border-radius: 0;
             cursor: pointer;
             transition: all 0.2s ease;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
         }
 
         .main-tab:hover {
             color: #f4f6f5;
+            background: rgba(244, 246, 245, 0.06);
         }
 
         .main-tab.active {
-            background: transparent;
-            color: #f4f6f5;
+            background: var(--accent);
+            color: #16242c;
             border-bottom-color: var(--accent);
             box-shadow: none;
         }
@@ -101,11 +107,13 @@
         .sub-nav {
             display: flex;
             justify-content: center;
-            gap: 10px;
-            padding: 16px 20px;
+            gap: 6px;
+            padding: 8px 12px;
             background-color: var(--surface);
             border-bottom: 1px solid var(--line);
             flex-wrap: wrap;
+            position: sticky;
+            z-index: 48;
         }
 
         .sub-tab {
@@ -113,7 +121,7 @@
             color: var(--ink-soft);
             border: 1px solid var(--line);
             border-bottom: 2px solid var(--line);
-            padding: 8px 16px;
+            padding: 5px 12px;
             border-radius: var(--radius-md);
             cursor: pointer;
             transition: all 0.2s ease;
@@ -125,20 +133,20 @@
         }
 
         .sub-tab .title-ar {
-            font-size: 15px;
+            font-size: 13px;
             font-weight: 700;
             color: var(--ink);
-            line-height: 1.3;
+            line-height: 1.25;
         }
 
         .sub-tab .title-en {
             font-family: var(--mono);
-            font-size: 11px;
+            font-size: 9.5px;
             font-weight: 500;
             color: var(--ink-soft);
-            margin-top: 3px;
+            margin-top: 2px;
             direction: ltr;
-            letter-spacing: 0.3px;
+            letter-spacing: 0.2px;
         }
 
         .sub-tab:hover {
@@ -146,17 +154,18 @@
         }
 
         .sub-tab.active {
-            border-color: var(--line);
+            background: var(--ink);
+            border-color: var(--ink);
             border-bottom-color: var(--accent);
             border-bottom-width: 2px;
         }
 
         .sub-tab.active .title-ar {
-            color: var(--ink);
+            color: #f4f6f5;
         }
 
         .sub-tab.active .title-en {
-            color: var(--accent);
+            color: #e8a463;
             font-weight: 600;
         }
 
@@ -213,6 +222,37 @@
 
         .content-card.active {
             display: block;
+        }
+
+        /* Empty / Coming Soon State */
+        .empty-state {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 50px 20px;
+            gap: 18px;
+        }
+
+        .empty-state .clock-icon {
+            font-size: 56px;
+            display: inline-block;
+            animation: tick-tock 1s ease-in-out infinite;
+            transform-origin: 50% 15%;
+        }
+
+        .empty-state .empty-text {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--ink-soft);
+            line-height: 1.6;
+        }
+
+        @keyframes tick-tock {
+            0% { transform: rotate(-14deg); }
+            50% { transform: rotate(14deg); }
+            100% { transform: rotate(-14deg); }
         }
 
         .sop-title {
@@ -300,6 +340,20 @@
             font-family: var(--mono);
             font-weight: 600;
             color: var(--ink);
+        }
+
+        /* Tap-to-highlight block */
+        .tap-highlight {
+            cursor: pointer;
+            border-radius: var(--radius-md);
+            padding: 8px;
+            margin: -8px;
+            transition: background-color 0.2s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .tap-highlight.is-active {
+            background-color: #fbf0dc;
         }
 
         /* Image Box Placeholder */
@@ -491,7 +545,7 @@
 
         <!-- 1. DCP - Filling Big Bags -->
         <div id="dcp-big-bags" class="content-card active">
-            <h2 class="sop-title">تعليمات عمل: تعبئة وسحب عينات ثنائي فوسفات الكالسيوم (Standard Operating Procedure - SOP)</h2>
+            <h2 class="sop-title">تعليمات عمل: تعبئة وسحب عينات ثنائي فوسفات الكالسيوم</h2>
 
             <div class="step-block">
                 <div class="step-header">استلام البجزات (Receipt & Inspection)</div>
@@ -520,9 +574,11 @@
                 <div class="step-content">
                     <p>يتم كتابة الرقم (B.B Code Number) على الشريط العلوي للبجزة من الجانب بخط واضح وصغير.</p>
                     <p>يتكون الرقم (B.B Code Number) من ثلاثة أجزاء:</p>
-                    <div class="example-box">No. of C - (xxxx) - Silo Name</div>
-                    <p style="margin-top: 5px;">(مثال: A - 9999 - 9c)</p>
-                    <p><small>c = cooler يتم التصفير كل 10000 طن وزيادة رقم ال c 1</small></p>
+                    <div class="tap-highlight" onclick="this.classList.toggle('is-active')">
+                        <div class="example-box">No. of C - (xxxx) - Silo Name</div>
+                        <p style="margin-top: 5px;">(مثال: 9C - 9999 - A)</p>
+                        <p><small>C = Collar، يتم تصفير الدورة عند رقم 10000 وبدء دورة جديدة من رقم 1</small></p>
+                    </div>
                 </div>
             </div>
 
@@ -566,10 +622,38 @@
                 <div class="step-content">
                     <p>تتم تعبئة الشكاير عن طريق إعادة التعبئة من البجزات المطابقة أو خارج المواصفة وفقاً للضوابط التالية:</p>
                     <ul>
-                        <li><strong>تعبئة الشكاير المحلي:</strong> تُعبأ من بجزات ذات قفيز (<span class="badge-code">White Tag</span> – <span class="badge-code">Yellow Tag</span> – <span class="badge-code">Green Tag</span> – <span class="badge-code">Green & Yellow Tag</span>).</li>
-                        <li><strong>تعبئة الشكاير التصدير:</strong> تُعبأ من بجزات ذات قفيز (<span class="badge-code">Yellow Tag</span> – <span class="badge-code">Green Tag</span> – <span class="badge-code">Green & Yellow Tag</span>).</li>
-                        <li><strong>تعبئة الشكاير لصالح نيوهوب:</strong> تُعبأ من بجزات ذات قفيز (<span class="badge-code">Green Tag</span> – <span class="badge-code">Green & Yellow Tag</span>) فقط.</li>
-                        <li><strong>تعبئة الشكاير خارج المواصفة:</strong> عند تعبئة شكاير خارج المواصفة (<span class="badge-code">P₂O₅</span> - <span class="badge-code">Ca</span> - <span class="badge-code">F</span> - <span class="badge-code">MC</span> - <span class="badge-code">IM, over</span>)، لا يتم البدء في تعبئتها إلا بتعليمات مباشرة من رئيس القسم، ويتم مراجعة الباتش المناسب على الشكاير التي يتم تعبئتها حسب الطريقة المتبعة.</li>
+                        <li><strong>تعبئة الشكاير المحلي:</strong> تُعبأ من بجزات ذات قفيز:
+                            <ul>
+                                <li><span class="badge-code">White Tag</span></li>
+                                <li><span class="badge-code">Yellow Tag</span></li>
+                                <li><span class="badge-code">Green Tag</span></li>
+                                <li><span class="badge-code">Green & Yellow Tag</span></li>
+                            </ul>
+                        </li>
+                        <li><strong>تعبئة الشكاير التصدير:</strong> تُعبأ من بجزات ذات قفيز:
+                            <ul>
+                                <li><span class="badge-code">Yellow Tag</span></li>
+                                <li><span class="badge-code">Green Tag</span></li>
+                                <li><span class="badge-code">Green & Yellow Tag</span></li>
+                            </ul>
+                        </li>
+                        <li><strong>تعبئة الشكاير لصالح نيوهوب:</strong> تُعبأ من بجزات ذات قفيز (فقط):
+                            <ul>
+                                <li><span class="badge-code">Green Tag</span></li>
+                                <li><span class="badge-code">Green & Yellow Tag</span></li>
+                            </ul>
+                        </li>
+                        <li><strong>تعبئة الشكاير خارج المواصفة:</strong> عند تعبئة شكاير خارج المواصفة، يتم مراجعة الباتش المناسب على الشكاير التي يتم تعبئتها حسب الطريقة المتبعة. وتشمل معايير خارج المواصفة:
+                            <ul>
+                                <li><span class="badge-code">P₂O₅</span></li>
+                                <li><span class="badge-code">Ca</span></li>
+                                <li><span class="badge-code">F</span></li>
+                                <li><span class="badge-code">MC</span></li>
+                                <li><span class="badge-code">IM</span></li>
+                                <li><span class="badge-code">Over</span></li>
+                            </ul>
+                            <div class="note-highlight">يجوز أن يجتمع عنصران في البجزة إلا الفلور والكالسيوم لأنه يكون غير مطابق، مع الاختيار بين أحدهما في الباتش حسب المتاح.</div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -1063,27 +1147,91 @@
         </div>
 
         <!-- باقي الصفحات الفرعية -->
-        <div id="dcp-recycling" class="content-card"><h2 class="sop-title">التدوير Recycling</h2></div>
+        <div id="dcp-recycling" class="content-card">
+            <h2 class="sop-title">التدوير Recycling</h2>
+            <div class="empty-state">
+                <span class="clock-icon">⏰</span>
+                <div class="empty-text">لا يوجد محتوى<br>سيتم التحديث قريباً</div>
+            </div>
+        </div>
+
+        <!-- صفحات فارغة: PA / GCC / Packaging materials -->
+        <div id="pa-empty" class="content-card">
+            <h2 class="sop-title">PA</h2>
+            <div class="empty-state">
+                <span class="clock-icon">⏰</span>
+                <div class="empty-text">لا يوجد محتوى<br>سيتم التحديث قريباً</div>
+            </div>
+        </div>
+
+        <div id="gcc-empty" class="content-card">
+            <h2 class="sop-title">GCC</h2>
+            <div class="empty-state">
+                <span class="clock-icon">⏰</span>
+                <div class="empty-text">لا يوجد محتوى<br>سيتم التحديث قريباً</div>
+            </div>
+        </div>
+
+        <div id="packaging-empty" class="content-card">
+            <h2 class="sop-title">Packaging materials</h2>
+            <div class="empty-state">
+                <span class="clock-icon">⏰</span>
+                <div class="empty-text">لا يوجد محتوى<br>سيتم التحديث قريباً</div>
+            </div>
+        </div>
 
     </div>
 
     <script>
+        // Keep the main tabs bar and the active sub-tabs bar stuck under the header while scrolling
+        function updateStickyOffsets() {
+            const headerH = document.querySelector('header').offsetHeight;
+            const mainNav = document.querySelector('.main-nav');
+            mainNav.style.top = headerH + 'px';
+
+            const mainNavH = mainNav.offsetHeight;
+            document.querySelectorAll('.sub-nav').forEach(nav => {
+                nav.style.top = (headerH + mainNavH) + 'px';
+            });
+        }
+        window.addEventListener('load', updateStickyOffsets);
+        window.addEventListener('resize', updateStickyOffsets);
+
         function switchMainTab(mainTabName) {
             const mainTabs = document.querySelectorAll('.main-tab');
             mainTabs.forEach(tab => tab.classList.remove('active'));
-            event.target.classList.add('active');
+            event.currentTarget.classList.add('active');
 
             const subNavs = document.querySelectorAll('.sub-nav');
             subNavs.forEach(nav => nav.style.display = 'none');
 
             const activeSubNav = document.getElementById('sub-nav-' + mainTabName);
             if(activeSubNav) activeSubNav.style.display = 'flex';
+
+            const emptyPageIds = { PA: 'pa-empty', GCC: 'gcc-empty', Packaging: 'packaging-empty' };
+            const allCards = document.querySelectorAll('.container > .content-card');
+
+            if (mainTabName === 'DCP') {
+                // Restore whichever DCP sub-page was last selected
+                const activeSubTabBtn = document.querySelector('#sub-nav-DCP .sub-tab.active') || document.querySelector('#sub-nav-DCP .sub-tab');
+                const match = activeSubTabBtn ? activeSubTabBtn.getAttribute('onclick').match(/'([^']+)'/) : null;
+                const targetId = match ? match[1] : 'dcp-big-bags';
+
+                allCards.forEach(card => card.classList.remove('active'));
+                const targetCard = document.getElementById(targetId);
+                if (targetCard) targetCard.classList.add('active');
+            } else {
+                allCards.forEach(card => card.classList.remove('active'));
+                const placeholderId = emptyPageIds[mainTabName];
+                const placeholderCard = placeholderId ? document.getElementById(placeholderId) : null;
+                if (placeholderCard) placeholderCard.classList.add('active');
+            }
         }
 
         function switchSubTab(subTabId) {
             const subTabs = document.querySelectorAll('.sub-tab');
             subTabs.forEach(tab => tab.classList.remove('active'));
-            event.target.classList.add('active');
+            event.currentTarget.classList.add('active');
 
             const cards = document.querySelectorAll('.content-card');
             cards.forEach(card => card.classList.remove('active'));
@@ -1110,7 +1258,7 @@
         // PWA: register an inline service worker (no external files needed)
         if ('serviceWorker' in navigator) {
             const swSource = `
-                const CACHE_NAME = 'qc-ecophos-v1';
+                const CACHE_NAME = 'qc-ecophos-v2';
                 self.addEventListener('install', (event) => {
                     self.skipWaiting();
                     event.waitUntil(
