@@ -1,13 +1,17 @@
+```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>QC ECOPHOS SYSTEM</title>
+
   <style>
     /* ==================== 1. COLOR PALETTE DEFINITIONS ==================== */
+
     :root {
-      /* Light Theme Colors (الوضع النهاري) */
+      /* Light Theme */
       --deep-green: #173B32;
       --emerald-green: #2F9E72;
       --dark-emerald: #187253;
@@ -18,14 +22,14 @@
       --border-color: #D8E6E0;
       --text-main: #173B32;
       --text-sub: #55716A;
-      
+
       /* Status Colors */
       --soft-gold: #C58A24;
       --soft-red: #C45B55;
       --calm-blue: #4F86A6;
       --success-green: #2E8B68;
 
-      /* Dynamic UI Mappings */
+      /* Dynamic UI */
       --nav-bg: var(--deep-green);
       --sub-nav-bg: #0F2822;
       --sub-item-bg: #1D483E;
@@ -34,14 +38,14 @@
     }
 
     [data-theme="dark"] {
-      /* Dark Theme Overrides (الوضع الداكن) */
+      /* Dark Theme */
       --bg-main: #0C1916;
       --card-bg: #142723;
       --soft-surface: #1B332E;
       --border-color: #274942;
       --text-main: #E6F6EF;
       --text-sub: #A3C2B9;
-      
+
       --nav-bg: #0A1512;
       --sub-nav-bg: #050B09;
       --sub-item-bg: #142723;
@@ -50,25 +54,35 @@
     }
 
     /* ==================== 2. GLOBAL BASE STYLES ==================== */
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
-    body { 
-      background-color: var(--bg-main); 
-      min-height: 100vh; 
-      display: flex; 
-      flex-direction: column; 
-      color: var(--text-main); 
-      transition: background-color 0.3s, color 0.3s; 
-    }
-    
-    /* Global styles forcing injected sub-pages inside #app-content to follow CSS variables */
-    #app-content, 
-    #app-content * {
-      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, sans-serif;
     }
 
-    #app-content table, 
-    #app-content .card, 
-    #app-content .box, 
+    body {
+      background-color: var(--bg-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      color: var(--text-main);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Injected Pages Theme */
+    #app-content,
+    #app-content * {
+      transition:
+        background-color 0.3s,
+        color 0.3s,
+        border-color 0.3s;
+    }
+
+    #app-content table,
+    #app-content .card,
+    #app-content .box,
     #app-content section {
       background-color: var(--card-bg);
       color: var(--text-main);
@@ -86,434 +100,972 @@
     }
 
     /* ==================== 3. HEADER & NAVIGATION ==================== */
-    .navbar { 
-      background-color: var(--nav-bg); 
-      color: #fff; 
-      display: flex; 
-      align-items: center; 
-      justify-content: space-between; 
-      padding: 0 20px; 
-      flex-wrap: wrap; 
-      gap: 10px; 
-    }
-    .nav-left { display: flex; align-items: center; flex-wrap: wrap; }
-    .navbar-brand { font-size: 18px; font-weight: bold; padding: 15px; border-left: 1px solid var(--sub-item-border); margin-left: 10px; cursor: pointer; color: #fff; }
-    
-    .nav-list { list-style: none; display: flex; align-items: center; gap: 5px; flex-wrap: wrap; }
-    .nav-item { cursor: pointer; border-radius: 4px; transition: background 0.2s; }
-    .nav-link { display: block; padding: 12px 18px; color: #D1E5E0; text-decoration: none; font-weight: bold; font-size: 14px; }
-    .nav-item:hover, .nav-item.active { background-color: var(--dark-emerald); }
-    .nav-item.active .nav-link { color: #FFFFFF; }
 
-    /* Controls Group */
-    .controls-group { display: flex; align-items: center; gap: 10px; padding: 10px 0; }
-    
-    .search-box { position: relative; }
-    .search-input {
-      background: var(--dark-emerald);
-      border: 1px solid var(--sub-item-border);
+    .navbar {
+      position: relative;
+      background-color: var(--nav-bg);
       color: #fff;
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-size: 13px;
-      outline: none;
-      width: 180px;
-      transition: width 0.3s ease;
-    }
-    .search-input:focus { width: 220px; border-color: var(--accent-color); }
-    .search-input::placeholder { color: #A3C2B9; }
 
-    .action-btn {
-      background: var(--dark-emerald);
-      border: 1px solid var(--sub-item-border);
-      color: #f8fafc;
-      padding: 6px 12px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 13px;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      transition: all 0.2s ease;
-    }
-    .action-btn:hover { background: var(--emerald-green); }
+      min-height: 105px;
+      padding: 10px 85px 12px;
 
-    /* Secondary Sub-Navigation Bar */
-    .sub-navbar { 
-      background-color: var(--sub-nav-bg); 
-      display: flex; 
-      align-items: center; 
-      justify-content: center;
-      padding: 8px 15px; 
-      gap: 8px; 
-      flex-wrap: wrap; 
-      border-bottom: 2px solid var(--emerald-green);
-    }
-    .sub-nav-item { 
-      background: var(--sub-item-bg); 
-      color: #A3C2B9; 
-      padding: 8px 14px; 
-      border-radius: 6px; 
-      cursor: pointer; 
-      transition: all 0.2s ease;
-      border: 1px solid var(--sub-item-border);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+
+      border-bottom: 2px solid var(--emerald-green);
+    }
+
+    /* ==================== QC ECOPHOS TITLE ==================== */
+
+    .navbar-brand {
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+
+      color: #ffffff;
+      cursor: pointer;
+
+      line-height: 1.2;
+      margin-bottom: 8px;
+
+      text-align: center;
+
+      transition: color 0.3s, transform 0.2s;
+    }
+
+    .navbar-brand:hover {
+      color: var(--emerald-green);
+      transform: translateY(-1px);
+    }
+
+    /* ==================== MAIN NAVIGATION ==================== */
+
+    .nav-list {
+      list-style: none;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 6px;
+
+      flex-wrap: nowrap;
+    }
+
+    .nav-item {
+      cursor: pointer;
+      border-radius: 6px;
+
+      min-width: 65px;
+
+      transition:
+        background-color 0.2s,
+        transform 0.2s;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 34px;
+
+      padding: 5px 14px;
+
+      color: #D1E5E0;
+      text-decoration: none;
+
+      font-weight: 700;
+      font-size: 14px;
+
       text-align: center;
     }
-    .sub-nav-item .title-ar { font-size: 13px; font-weight: 700; color: #F4F8F6; line-height: 1.2; }
-    .sub-nav-item .title-en { font-size: 11px; font-weight: 500; color: #A3C2B9; margin-top: 2px; direction: ltr; }
-    .sub-nav-item .title-en-only { font-size: 13px; font-weight: 700; color: #F4F8F6; direction: ltr; }
-    
-    .sub-nav-item:hover { background: var(--dark-emerald); }
-    .sub-nav-item:hover .title-en, .sub-nav-item:hover .title-en-only { color: #FFFFFF; }
-    .sub-nav-item.active { background: var(--emerald-green); border-color: var(--emerald-green); }
-    .sub-nav-item.active .title-ar, .sub-nav-item.active .title-en-only { color: #ffffff; }
-    .sub-nav-item.active .title-en { color: var(--mint-green); }
+
+    .nav-item:hover {
+      background-color: var(--dark-emerald);
+      transform: translateY(-1px);
+    }
+
+    .nav-item.active {
+      background-color: var(--dark-emerald);
+    }
+
+    .nav-item.active .nav-link {
+      color: #FFFFFF;
+    }
+
+    /* Packaging Materials = two lines */
+
+    #main-tab-pkg {
+      min-width: 125px;
+    }
+
+    #main-tab-pkg .nav-link {
+      line-height: 1.15;
+      flex-direction: column;
+      white-space: normal;
+      padding: 3px 12px;
+    }
+
+    /* ==================== CONTROLS ==================== */
+
+    .controls-group {
+      position: absolute;
+
+      left: 15px;
+      top: 12px;
+
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .action-btn {
+      background: var(--dark-emerald);
+
+      border: 1px solid var(--sub-item-border);
+
+      color: #f8fafc;
+
+      width: 38px;
+      height: 34px;
+
+      border-radius: 7px;
+
+      cursor: pointer;
+
+      font-size: 16px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      transition:
+        background-color 0.2s,
+        transform 0.2s,
+        border-color 0.2s;
+    }
+
+    .action-btn:hover {
+      background: var(--emerald-green);
+      border-color: var(--emerald-green);
+      transform: translateY(-1px);
+    }
+
+    /* ==================== SECONDARY NAVIGATION ==================== */
+
+    .sub-navbar {
+      background-color: var(--sub-nav-bg);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 8px 15px;
+
+      gap: 8px;
+
+      flex-wrap: wrap;
+
+      border-bottom: 2px solid var(--emerald-green);
+    }
+
+    .sub-nav-item {
+      background: var(--sub-item-bg);
+
+      color: #A3C2B9;
+
+      padding: 8px 14px;
+
+      border-radius: 6px;
+
+      cursor: pointer;
+
+      transition: all 0.2s ease;
+
+      border: 1px solid var(--sub-item-border);
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+    }
+
+    .sub-nav-item .title-ar {
+      font-size: 13px;
+      font-weight: 700;
+      color: #F4F8F6;
+      line-height: 1.2;
+    }
+
+    .sub-nav-item .title-en {
+      font-size: 11px;
+      font-weight: 500;
+      color: #A3C2B9;
+      margin-top: 2px;
+      direction: ltr;
+    }
+
+    .sub-nav-item .title-en-only {
+      font-size: 13px;
+      font-weight: 700;
+      color: #F4F8F6;
+      direction: ltr;
+    }
+
+    .sub-nav-item:hover {
+      background: var(--dark-emerald);
+    }
+
+    .sub-nav-item:hover .title-en,
+    .sub-nav-item:hover .title-en-only {
+      color: #FFFFFF;
+    }
+
+    .sub-nav-item.active {
+      background: var(--emerald-green);
+      border-color: var(--emerald-green);
+    }
+
+    .sub-nav-item.active .title-ar,
+    .sub-nav-item.active .title-en-only {
+      color: #ffffff;
+    }
+
+    .sub-nav-item.active .title-en {
+      color: var(--mint-green);
+    }
 
     /* ==================== 4. CONTENT AREA ==================== */
-    .content { flex: 1; padding: 30px 20px; max-width: 1200px; margin: 0 auto; width: 100%; }
-    
+
+    .content {
+      flex: 1;
+
+      padding: 30px 20px;
+
+      max-width: 1200px;
+
+      margin: 0 auto;
+
+      width: 100%;
+    }
+
     .card-box {
       background: var(--card-bg);
+
       border-radius: 12px;
+
       padding: 40px 20px;
+
       text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+
       border: 1px solid var(--border-color);
+
       margin-top: 20px;
     }
-    .card-title { font-size: 22px; font-weight: 800; color: var(--text-main); margin-bottom: 12px; }
-    .card-sub { font-size: 18px; color: var(--text-sub); font-weight: 700; line-height: 1.6; }
-    .dhikr-text { font-size: 16px; color: var(--success-green); font-weight: 800; margin-top: 15px; }
 
-    /* Search Highlight Style */
-    mark.highlight { background-color: var(--soft-gold); color: #fff; padding: 2px 4px; border-radius: 3px; }
+    .card-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 12px;
+    }
+
+    .card-sub {
+      font-size: 18px;
+      color: var(--text-sub);
+      font-weight: 700;
+      line-height: 1.6;
+    }
+
+    /* ==================== DHIKR MESSAGE ==================== */
+
+    .dhikr-text {
+      font-size: 20px;
+
+      color: #FFFFFF;
+
+      font-weight: 800;
+
+      margin-top: 18px;
+
+      line-height: 1.7;
+
+      text-shadow:
+        0 0 5px rgba(255, 255, 255, 0.20),
+        0 0 10px rgba(47, 158, 114, 0.22);
+    }
+
+    [data-theme="light"] .dhikr-text {
+      color: var(--deep-green);
+
+      text-shadow:
+        0 0 4px rgba(47, 158, 114, 0.18);
+    }
 
     /* Animated Icon */
-    .icon-container { margin: 20px 0 10px; display: inline-block; }
+
+    .icon-container {
+      margin: 20px 0 10px;
+      display: inline-block;
+    }
+
     .animated-icon {
       font-size: 70px;
+
       display: inline-block;
+
       animation: tick-tock 1.5s ease-in-out infinite alternate;
     }
 
     @keyframes tick-tock {
-      0% { transform: scale(1) rotate(-10deg); }
-      100% { transform: scale(1.08) rotate(10deg); }
+      0% {
+        transform: scale(1) rotate(-10deg);
+      }
+
+      100% {
+        transform: scale(1.08) rotate(10deg);
+      }
     }
 
-    .loading-spinner { color: var(--text-sub); font-size: 16px; text-align: center; margin-top: 40px; font-weight: bold; }
+    .loading-spinner {
+      color: var(--text-sub);
 
-    /* Print Styles */
+      font-size: 16px;
+
+      text-align: center;
+
+      margin-top: 40px;
+
+      font-weight: bold;
+    }
+
+    /* ==================== PRINT ==================== */
+
     @media print {
-      .navbar, .sub-navbar, .controls-group { display: none !important; }
-      body { background-color: #fff !important; color: #000 !important; }
-      .content { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
-      .card-box { box-shadow: none !important; border: none !important; padding: 10px !important; }
+
+      .navbar,
+      .sub-navbar,
+      .controls-group {
+        display: none !important;
+      }
+
+      body {
+        background-color: #fff !important;
+        color: #000 !important;
+      }
+
+      .content {
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      .card-box {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 10px !important;
+      }
+    }
+
+    /* ==================== MOBILE ==================== */
+
+    @media (max-width: 700px) {
+
+      .navbar {
+        min-height: 125px;
+        padding: 12px 65px 12px 70px;
+      }
+
+      .navbar-brand {
+        font-size: 18px;
+        margin-bottom: 7px;
+      }
+
+      .nav-list {
+        gap: 3px;
+      }
+
+      .nav-item {
+        min-width: auto;
+      }
+
+      .nav-link {
+        font-size: 12px;
+        padding: 5px 8px;
+      }
+
+      #main-tab-pkg {
+        min-width: 80px;
+      }
+
+      .controls-group {
+        left: 8px;
+        top: 9px;
+        gap: 5px;
+      }
+
+      .action-btn {
+        width: 32px;
+        height: 30px;
+        font-size: 14px;
+      }
+
+      .sub-navbar {
+        gap: 5px;
+        padding: 7px;
+      }
+
+      .sub-nav-item {
+        padding: 7px 9px;
+      }
     }
   </style>
 </head>
+
 <body>
 
-  <!-- Top Navigation Bar -->
+  <!-- ==================== TOP NAVIGATION ==================== -->
+
   <nav class="navbar">
-    <div class="nav-left">
-      <div class="navbar-brand" onclick="showWelcomeScreen('DCP')">QC ECOPHOS</div>
-      <ul class="nav-list">
-        <li class="nav-item active" id="main-tab-dcp" onclick="showMainCategory('DCP')">
-          <span class="nav-link">DCP</span>
-        </li>
-        <li class="nav-item" id="main-tab-pa" onclick="showMainCategory('PA')">
-          <span class="nav-link">PA</span>
-        </li>
-        <li class="nav-item" id="main-tab-gcc" onclick="showMainCategory('GCC')">
-          <span class="nav-link">GCC</span>
-        </li>
-        <li class="nav-item" id="main-tab-pkg" onclick="showMainCategory('Packaging')">
-          <span class="nav-link">Packaging Materials</span>
-        </li>
-      </ul>
+
+    <!-- QC ECOPHOS -->
+    <div class="navbar-brand" onclick="showWelcomeScreen('DCP')">
+      QC ECOPHOS
     </div>
 
-    <!-- Controls Group -->
+    <!-- Main Categories -->
+    <ul class="nav-list">
+
+      <li class="nav-item active"
+          id="main-tab-dcp"
+          onclick="showMainCategory('DCP')">
+        <span class="nav-link">DCP</span>
+      </li>
+
+      <li class="nav-item"
+          id="main-tab-pa"
+          onclick="showMainCategory('PA')">
+        <span class="nav-link">PA</span>
+      </li>
+
+      <li class="nav-item"
+          id="main-tab-gcc"
+          onclick="showMainCategory('GCC')">
+        <span class="nav-link">GCC</span>
+      </li>
+
+      <li class="nav-item"
+          id="main-tab-pkg"
+          onclick="showMainCategory('Packaging')">
+        <span class="nav-link">
+          <span>Packaging</span>
+          <span>Materials</span>
+        </span>
+      </li>
+
+    </ul>
+
+    <!-- Controls - Top Left -->
     <div class="controls-group">
-      <div class="search-box">
-        <input type="text" id="global-search" class="search-input" placeholder="بحث فوري..." onkeyup="handleSearch()">
-      </div>
-      <button class="action-btn" onclick="toggleDarkMode()" title="تغيير المظهر">
+
+      <button
+        class="action-btn"
+        onclick="toggleDarkMode()"
+        title="تغيير المظهر">
         <span id="theme-icon">🌙</span>
       </button>
-      <button class="action-btn" onclick="window.print()" title="طباعة الصفحة / PDF">
+
+      <button
+        class="action-btn"
+        onclick="window.print()"
+        title="طباعة الصفحة / PDF">
         <span>🖨️</span>
       </button>
+
     </div>
+
   </nav>
 
-  <!-- Sub Navigation Bar: DCP -->
+
+  <!-- ==================== DCP SUB NAVIGATION ==================== -->
+
   <div class="sub-navbar" id="sub-navbar-dcp">
-    <div class="sub-nav-item" onclick="loadSubPage('dcp/filling-big-bags.html', this)">
+
+    <div class="sub-nav-item"
+         onclick="loadSubPage('dcp/filling-big-bags.html', this)">
       <span class="title-ar">تعبئة البجزات</span>
       <span class="title-en">Filling Big Bags</span>
     </div>
-    <div class="sub-nav-item" onclick="loadSubPage('dcp/filling-small-bags.html', this)">
+
+    <div class="sub-nav-item"
+         onclick="loadSubPage('dcp/filling-small-bags.html', this)">
       <span class="title-ar">تعبئة الشكاير</span>
       <span class="title-en">Filling Small Bags</span>
     </div>
-    <div class="sub-nav-item" onclick="loadSubPage('dcp/delivery-of-the-warehouse.html', this)">
+
+    <div class="sub-nav-item"
+         onclick="loadSubPage('dcp/delivery-of-the-warehouse.html', this)">
       <span class="title-ar">التسليم للمخزن</span>
       <span class="title-en">Delivery of the warehouse</span>
     </div>
-    <div class="sub-nav-item" onclick="loadSubPage('dcp/order-preparation.html', this)">
+
+    <div class="sub-nav-item"
+         onclick="loadSubPage('dcp/order-preparation.html', this)">
       <span class="title-ar">تجهيز الطلبيات</span>
       <span class="title-en">Order preparation</span>
     </div>
-    <div class="sub-nav-item" onclick="loadSubPage('dcp/loading.html', this)">
+
+    <div class="sub-nav-item"
+         onclick="loadSubPage('dcp/loading.html', this)">
       <span class="title-ar">التحميل</span>
       <span class="title-en">Loading</span>
     </div>
-    <div class="sub-nav-item" onclick="loadSubPage('dcp/specifications.html', this)">
+
+    <div class="sub-nav-item"
+         onclick="loadSubPage('dcp/specifications.html', this)">
       <span class="title-ar">المواصفات</span>
       <span class="title-en">Specifications</span>
     </div>
+
   </div>
 
-  <!-- Sub Navigation Bar: PA -->
-  <div class="sub-navbar" id="sub-navbar-pa" style="display: none;">
-    <div class="sub-nav-item" onclick="loadSubPage('pa/jerrycan.html', this)">
+
+  <!-- ==================== PA SUB NAVIGATION ==================== -->
+
+  <div class="sub-navbar"
+       id="sub-navbar-pa"
+       style="display: none;">
+
+    <div class="sub-nav-item"
+         onclick="loadSubPage('pa/jerrycan.html', this)">
       <span class="title-ar">جركن</span>
       <span class="title-en">Jerrycan</span>
     </div>
-    <div class="sub-nav-item" onclick="loadSubPage('pa/cubes.html', this)">
+
+    <div class="sub-nav-item"
+         onclick="loadSubPage('pa/cubes.html', this)">
       <span class="title-ar">مكعبات</span>
       <span class="title-en">Cubes</span>
     </div>
-    <div class="sub-nav-item" onclick="loadSubPage('pa/tanks.html', this)">
+
+    <div class="sub-nav-item"
+         onclick="loadSubPage('pa/tanks.html', this)">
       <span class="title-ar">تنكات</span>
       <span class="title-en">Tanks</span>
     </div>
+
   </div>
 
-  <!-- Sub Navigation Bar: GCC -->
-  <div class="sub-navbar" id="sub-navbar-gcc" style="display: none;">
-    <div class="sub-nav-item" onclick="loadSubPage('gcc/filling-big-bags.html', this)">
+
+  <!-- ==================== GCC SUB NAVIGATION ==================== -->
+
+  <div class="sub-navbar"
+       id="sub-navbar-gcc"
+       style="display: none;">
+
+    <div class="sub-nav-item"
+         onclick="loadSubPage('gcc/filling-big-bags.html', this)">
       <span class="title-ar">تعبئة البجزات</span>
       <span class="title-en">Filling Big Bags</span>
     </div>
-    <div class="sub-nav-item" onclick="loadSubPage('gcc/filling-small-bags.html', this)">
+
+    <div class="sub-nav-item"
+         onclick="loadSubPage('gcc/filling-small-bags.html', this)">
       <span class="title-ar">تعبئة الشكاير</span>
       <span class="title-en">Filling Small Bags</span>
     </div>
-    <div class="sub-nav-item" onclick="loadSubPage('gcc/delivery-of-the-warehouse.html', this)">
+
+    <div class="sub-nav-item"
+         onclick="loadSubPage('gcc/delivery-of-the-warehouse.html', this)">
       <span class="title-ar">التسليم للمخزن</span>
       <span class="title-en">Delivery of the warehouse</span>
     </div>
-    <div class="sub-nav-item" onclick="loadSubPage('gcc/order-preparation.html', this)">
+
+    <div class="sub-nav-item"
+         onclick="loadSubPage('gcc/order-preparation.html', this)">
       <span class="title-ar">تجهيز الطلبيات</span>
       <span class="title-en">Order preparation</span>
     </div>
-    <div class="sub-nav-item" onclick="loadSubPage('gcc/loading.html', this)">
+
+    <div class="sub-nav-item"
+         onclick="loadSubPage('gcc/loading.html', this)">
       <span class="title-ar">التحميل</span>
       <span class="title-en">Loading</span>
     </div>
-    <div class="sub-nav-item" onclick="loadSubPage('gcc/specifications.html', this)">
+
+    <div class="sub-nav-item"
+         onclick="loadSubPage('gcc/specifications.html', this)">
       <span class="title-ar">المواصفات</span>
       <span class="title-en">Specifications</span>
     </div>
+
   </div>
 
-  <!-- Sub Navigation Bar: Packaging Materials -->
-  <div class="sub-navbar" id="sub-navbar-packaging" style="display: none;">
-    <div class="sub-nav-item" onclick="loadSubPage('packaging/dcp-big-bag.html', this)">
+
+  <!-- ==================== PACKAGING MATERIALS ==================== -->
+
+  <div class="sub-navbar"
+       id="sub-navbar-packaging"
+       style="display: none;">
+
+    <div class="sub-nav-item"
+         onclick="loadSubPage('packaging/dcp-big-bag.html', this)">
       <span class="title-en-only">DCP Big Bag</span>
     </div>
-    <div class="sub-nav-item" onclick="loadSubPage('packaging/dcp-small-bag.html', this)">
+
+    <div class="sub-nav-item"
+         onclick="loadSubPage('packaging/dcp-small-bag.html', this)">
       <span class="title-en-only">DCP Small Bag</span>
     </div>
-    <div class="sub-nav-item" onclick="loadSubPage('packaging/dcp-bulk-bag.html', this)">
+
+    <div class="sub-nav-item"
+         onclick="loadSubPage('packaging/dcp-bulk-bag.html', this)">
       <span class="title-en-only">DCP Bulk Bag</span>
     </div>
-    <div class="sub-nav-item" onclick="loadSubPage('packaging/gcc-big-bag.html', this)">
+
+    <div class="sub-nav-item"
+         onclick="loadSubPage('packaging/gcc-big-bag.html', this)">
       <span class="title-en-only">GCC Big Bag</span>
     </div>
-    <div class="sub-nav-item" onclick="loadSubPage('packaging/gcc-small-bag.html', this)">
+
+    <div class="sub-nav-item"
+         onclick="loadSubPage('packaging/gcc-small-bag.html', this)">
       <span class="title-en-only">GCC Small Bag</span>
     </div>
-    <div class="sub-nav-item" onclick="loadSubPage('packaging/pa-jerricans.html', this)">
+
+    <div class="sub-nav-item"
+         onclick="loadSubPage('packaging/pa-jerricans.html', this)">
       <span class="title-en-only">PA Jerricans</span>
     </div>
-    <div class="sub-nav-item" onclick="loadSubPage('packaging/pa-tanks.html', this)">
+
+    <div class="sub-nav-item"
+         onclick="loadSubPage('packaging/pa-tanks.html', this)">
       <span class="title-en-only">PA Tanks</span>
     </div>
-    <div class="sub-nav-item" onclick="loadSubPage('packaging/pa-cubes.html', this)">
+
+    <div class="sub-nav-item"
+         onclick="loadSubPage('packaging/pa-cubes.html', this)">
       <span class="title-en-only">PA Cubes</span>
     </div>
-    <div class="sub-nav-item" onclick="loadSubPage('packaging/pallets.html', this)">
+
+    <div class="sub-nav-item"
+         onclick="loadSubPage('packaging/pallets.html', this)">
       <span class="title-en-only">Pallets</span>
     </div>
-    <div class="sub-nav-item" onclick="loadSubPage('packaging/shrink.html', this)">
+
+    <div class="sub-nav-item"
+         onclick="loadSubPage('packaging/shrink.html', this)">
       <span class="title-en-only">Shrink</span>
     </div>
-    <div class="sub-nav-item" onclick="loadSubPage('packaging/sticker.html', this)">
+
+    <div class="sub-nav-item"
+         onclick="loadSubPage('packaging/sticker.html', this)">
       <span class="title-en-only">Sticker</span>
     </div>
+
   </div>
 
-  <!-- Main Content Container -->
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+
   <main class="content" id="app-content">
+
     <div class="card-box">
-      <h2 class="card-title">مرحباً بك في موقع تعليمات الجودة ايكفوس - QC ECOPHOS</h2>
-      <div class="icon-container"><span class="animated-icon">🌳</span></div>
-      <p class="card-sub">اختر القسم أو الصفحة الثانوية من القائمة العلوية لعرض المحتوى.</p>
+
+      <h2 class="card-title">
+        مرحباً بك في موقع تعليمات الجودة ايكفوس - QC ECOPHOS
+      </h2>
+
+      <div class="icon-container">
+        <span class="animated-icon">🌳</span>
+      </div>
+
+      <p class="card-sub">
+        اختر القسم أو الصفحة الثانوية من القائمة العلوية لعرض المحتوى.
+      </p>
+
     </div>
+
   </main>
 
+
+  <!-- ==================== JAVASCRIPT ==================== -->
+
   <script>
-    // 1. Dark Mode Toggle System
+
+    /* ==================== 1. DARK MODE ==================== */
+
     function toggleDarkMode() {
-      const currentTheme = document.documentElement.getAttribute("data-theme");
-      const targetTheme = currentTheme === "dark" ? "light" : "dark";
-      
-      document.documentElement.setAttribute("data-theme", targetTheme);
-      localStorage.setItem("theme", targetTheme);
-      document.getElementById("theme-icon").textContent = targetTheme === "dark" ? "☀️" : "🌙";
+
+      const currentTheme =
+        document.documentElement.getAttribute("data-theme");
+
+      const targetTheme =
+        currentTheme === "dark" ? "light" : "dark";
+
+      document.documentElement.setAttribute(
+        "data-theme",
+        targetTheme
+      );
+
+      localStorage.setItem(
+        "theme",
+        targetTheme
+      );
+
+      document.getElementById("theme-icon").textContent =
+        targetTheme === "dark" ? "☀️" : "🌙";
     }
 
-    // Initialize Theme State
-    const savedTheme = localStorage.getItem("theme") || "light";
-    document.documentElement.setAttribute("data-theme", savedTheme);
-    window.addEventListener('DOMContentLoaded', () => {
-      document.getElementById("theme-icon").textContent = savedTheme === "dark" ? "☀️" : "🌙";
-    });
 
-    // 2. Search Highlights System
-    function handleSearch() {
-      const query = document.getElementById('global-search').value.trim().toLowerCase();
-      const container = document.getElementById('app-content');
-      
-      removeHighlights(container);
-      if (query) highlightText(container, query);
-    }
+    /* Initialize Theme */
 
-    function highlightText(node, query) {
-      if (node.nodeType === 3) {
-        const text = node.nodeValue;
-        const index = text.toLowerCase().indexOf(query);
-        if (index >= 0) {
-          const mark = document.createElement('mark');
-          mark.className = 'highlight';
-          const matchedText = node.splitText(index);
-          matchedText.splitText(query.length);
-          mark.appendChild(matchedText.cloneNode(true));
-          matchedText.parentNode.replaceChild(mark, matchedText);
-        }
-      } else if (node.nodeType === 1 && node.childNodes && !/(script|style)/i.test(node.tagName)) {
-        for (let i = 0; i < node.childNodes.length; i++) {
-          highlightText(node.childNodes[i], query);
-        }
+    const savedTheme =
+      localStorage.getItem("theme") || "light";
+
+    document.documentElement.setAttribute(
+      "data-theme",
+      savedTheme
+    );
+
+    window.addEventListener(
+      "DOMContentLoaded",
+      () => {
+
+        document.getElementById("theme-icon").textContent =
+          savedTheme === "dark" ? "☀️" : "🌙";
+
       }
-    }
+    );
 
-    function removeHighlights(container) {
-      const highlights = container.querySelectorAll('mark.highlight');
-      highlights.forEach(mark => {
-        const parent = mark.parentNode;
-        parent.replaceChild(document.createTextNode(mark.textContent), mark);
-        parent.normalize();
-      });
-    }
 
-    // 3. Navigation & AJAX Sub-Page Loading
+    /* ==================== 2. NAVIGATION ==================== */
+
     function showMainCategory(categoryName) {
-      document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
-      document.querySelectorAll('.sub-nav-item').forEach(el => el.classList.remove('active'));
-      
-      const subNavDcp = document.getElementById('sub-navbar-dcp');
-      const subNavPa = document.getElementById('sub-navbar-pa');
-      const subNavGcc = document.getElementById('sub-navbar-gcc');
-      const subNavPackaging = document.getElementById('sub-navbar-packaging');
 
-      subNavDcp.style.display = 'none';
-      subNavPa.style.display = 'none';
-      subNavGcc.style.display = 'none';
-      subNavPackaging.style.display = 'none';
+      document
+        .querySelectorAll(".nav-item")
+        .forEach(el => el.classList.remove("active"));
 
-      if (categoryName === 'DCP') {
-        document.getElementById('main-tab-dcp').classList.add('active');
-        subNavDcp.style.display = 'flex';
-      } else if (categoryName === 'PA') {
-        document.getElementById('main-tab-pa').classList.add('active');
-        subNavPa.style.display = 'flex';
-      } else if (categoryName === 'GCC') {
-        document.getElementById('main-tab-gcc').classList.add('active');
-        subNavGcc.style.display = 'flex';
-      } else if (categoryName === 'Packaging') {
-        document.getElementById('main-tab-pkg').classList.add('active');
-        subNavPackaging.style.display = 'flex';
+      document
+        .querySelectorAll(".sub-nav-item")
+        .forEach(el => el.classList.remove("active"));
+
+      const subNavDcp =
+        document.getElementById("sub-navbar-dcp");
+
+      const subNavPa =
+        document.getElementById("sub-navbar-pa");
+
+      const subNavGcc =
+        document.getElementById("sub-navbar-gcc");
+
+      const subNavPackaging =
+        document.getElementById("sub-navbar-packaging");
+
+
+      subNavDcp.style.display = "none";
+      subNavPa.style.display = "none";
+      subNavGcc.style.display = "none";
+      subNavPackaging.style.display = "none";
+
+
+      if (categoryName === "DCP") {
+
+        document
+          .getElementById("main-tab-dcp")
+          .classList.add("active");
+
+        subNavDcp.style.display = "flex";
+
       }
+
+      else if (categoryName === "PA") {
+
+        document
+          .getElementById("main-tab-pa")
+          .classList.add("active");
+
+        subNavPa.style.display = "flex";
+
+      }
+
+      else if (categoryName === "GCC") {
+
+        document
+          .getElementById("main-tab-gcc")
+          .classList.add("active");
+
+        subNavGcc.style.display = "flex";
+
+      }
+
+      else if (categoryName === "Packaging") {
+
+        document
+          .getElementById("main-tab-pkg")
+          .classList.add("active");
+
+        subNavPackaging.style.display = "flex";
+
+      }
+
 
       showWelcomeScreen(categoryName);
     }
 
+
+    /* ==================== WELCOME SCREEN ==================== */
+
     function showWelcomeScreen(categoryName) {
-      const container = document.getElementById('app-content');
+
+      const container =
+        document.getElementById("app-content");
+
       container.innerHTML = `
+
         <div class="card-box">
-          <h2 class="card-title">مرحباً بك في موقع تعليمات الجودة ايكفوس - QC ECOPHOS</h2>
-          <div class="icon-container"><span class="animated-icon">🌳</span></div>
-          <p class="card-sub">قسم: <b>${categoryName}</b> - اختر الصفحة الثانوية من القائمة العلوية لعرض المحتوى.</p>
+
+          <h2 class="card-title">
+            مرحباً بك في موقع تعليمات الجودة ايكفوس - QC ECOPHOS
+          </h2>
+
+          <div class="icon-container">
+            <span class="animated-icon">🌳</span>
+          </div>
+
+          <p class="card-sub">
+            قسم: <b>${categoryName}</b>
+            - اختر الصفحة الثانوية من القائمة العلوية لعرض المحتوى.
+          </p>
+
         </div>
+
       `;
     }
 
+
+    /* ==================== LOAD SUB PAGE ==================== */
+
     function loadSubPage(filePath, element) {
+
       if (element) {
-        document.querySelectorAll('.sub-nav-item').forEach(el => el.classList.remove('active'));
-        element.classList.add('active');
+
+        document
+          .querySelectorAll(".sub-nav-item")
+          .forEach(el => el.classList.remove("active"));
+
+        element.classList.add("active");
       }
 
-      const container = document.getElementById('app-content');
-      container.innerHTML = '<div class="loading-spinner">جاري تحميل المحتوى...</div>';
+
+      const container =
+        document.getElementById("app-content");
+
+      container.innerHTML =
+        '<div class="loading-spinner">جاري تحميل المحتوى...</div>';
+
 
       fetch(`pages/${filePath}`)
+
         .then(response => {
-          if (!response.ok) throw new Error('الملف غير موجود');
+
+          if (!response.ok)
+            throw new Error("الملف غير موجود");
+
           return response.text();
+
         })
+
         .then(htmlContent => {
+
           container.innerHTML = htmlContent;
-          
-          // ضمان استمرار تطبيق الوضع الداكن/النهاري على الصفحات المجلوبة ديناميكياً
-          const currentTheme = localStorage.getItem("theme") || "light";
-          document.documentElement.setAttribute("data-theme", currentTheme);
+
+          /* Preserve current theme */
+
+          const currentTheme =
+            localStorage.getItem("theme") || "light";
+
+          document.documentElement.setAttribute(
+            "data-theme",
+            currentTheme
+          );
 
           executeScriptsInContainer(container);
-          handleSearch();
+
         })
+
         .catch(err => {
+
           container.innerHTML = `
+
             <div class="card-box">
-              <div class="icon-container"><span class="animated-icon">⏰</span></div>
-              <p class="card-sub">ما زال الإعداد مستمر<br>سيتم التحديث قريباً</p>
-              <div class="dhikr-text">( سبحان الله وبحمده سبحان الله العظيم )</div>
+
+              <div class="icon-container">
+                <span class="animated-icon">⏰</span>
+              </div>
+
+              <p class="card-sub">
+                ما زال الإعداد مستمر<br>
+                سيتم التحديث قريباً
+              </p>
+
+              <div class="dhikr-text">
+                ( سبحان الله وبحمده سبحان الله العظيم )
+              </div>
+
             </div>
+
           `;
         });
+
     }
 
+
+    /* ==================== EXECUTE LOADED SCRIPTS ==================== */
+
     function executeScriptsInContainer(container) {
-      const scripts = container.querySelectorAll("script");
+
+      const scripts =
+        container.querySelectorAll("script");
+
       scripts.forEach(oldScript => {
-        const newScript = document.createElement("script");
-        Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
-        newScript.appendChild(document.createTextNode(oldScript.innerHTML));
-        oldScript.parentNode.replaceChild(newScript, oldScript);
+
+        const newScript =
+          document.createElement("script");
+
+        Array.from(oldScript.attributes)
+          .forEach(attr =>
+            newScript.setAttribute(
+              attr.name,
+              attr.value
+            )
+          );
+
+        newScript.appendChild(
+          document.createTextNode(
+            oldScript.innerHTML
+          )
+        );
+
+        oldScript.parentNode.replaceChild(
+          newScript,
+          oldScript
+        );
+
       });
+
     }
+
   </script>
 
 </body>
 </html>
+```
