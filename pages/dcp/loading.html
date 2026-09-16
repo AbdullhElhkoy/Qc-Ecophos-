@@ -1,0 +1,1026 @@
+<style>
+/* ==========================================
+   LOADING PAGE
+   Main Theme Compatible
+   ========================================== */
+
+.loading-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 10px 40px;
+    background: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Tajawal', Arial, sans-serif;
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   MAIN CARD
+   ========================================== */
+
+.loading-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-top: 4px solid var(--emerald-green);
+    border-radius: 14px;
+    padding: 30px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+
+/* ==========================================
+   MAIN TITLE
+   ========================================== */
+
+.loading-title {
+    text-align: center;
+    color: var(--deep-green);
+    font-size: 26px;
+    font-weight: 800;
+    margin: 0 0 28px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--emerald-green);
+}
+
+[data-theme="dark"] .loading-title {
+    color: var(--accent-color);
+}
+
+
+/* ==========================================
+   INNER NAVIGATION
+   ========================================== */
+
+.loading-inner-nav {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 8px;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+    flex-wrap: wrap;
+}
+
+.loading-inner-tab {
+    background: var(--soft-surface);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    padding: 9px 16px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-family: 'Tajawal', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+.loading-inner-tab:hover {
+    background: var(--mint-green);
+    border-color: var(--emerald-green);
+    color: var(--deep-green);
+    transform: translateY(-1px);
+}
+
+.loading-inner-tab.active {
+    background: var(--emerald-green);
+    border-color: var(--emerald-green);
+    color: #ffffff;
+}
+
+
+/* ==========================================
+   CONTENT
+   ========================================== */
+
+.loading-content {
+    display: none;
+}
+
+.loading-content.active {
+    display: block;
+}
+
+
+/* ==========================================
+   STEP BLOCK
+   ========================================== */
+
+.loading-step {
+    background: var(--soft-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 11px;
+    padding: 18px 22px;
+    margin-bottom: 16px;
+    border-right: 4px solid var(--dark-emerald);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+
+    transition:
+        background-color 0.3s,
+        color 0.3s,
+        border-color 0.3s,
+        transform 0.2s ease;
+}
+
+.loading-step:hover {
+    transform: translateY(-1px);
+}
+
+
+/* ==========================================
+   STEP HEADER
+   ========================================== */
+
+.loading-step-header {
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--deep-green);
+    margin-bottom: 10px;
+}
+
+[data-theme="dark"] .loading-step-header {
+    color: var(--accent-color);
+}
+
+
+/* ==========================================
+   STEP CONTENT
+   ========================================== */
+
+.loading-step-content {
+    color: var(--text-main);
+    font-size: 15px;
+}
+
+.loading-step-content p {
+    margin-bottom: 8px;
+}
+
+.loading-step-content ul {
+    list-style: none;
+    padding-right: 5px;
+}
+
+.loading-step-content ul li {
+    position: relative;
+    padding-right: 20px;
+    margin-bottom: 7px;
+}
+
+.loading-step-content ul li::before {
+    content: "•";
+    color: var(--emerald-green);
+    font-weight: 800;
+    font-size: 18px;
+    position: absolute;
+    right: 0;
+    top: -2px;
+}
+
+.loading-step-content ol {
+    padding-right: 24px;
+}
+
+.loading-step-content ol li {
+    margin-bottom: 7px;
+}
+
+
+/* ==========================================
+   WARNING BLOCK
+   ========================================== */
+
+.loading-warning {
+    background: var(--mint-green);
+    border-right-color: var(--soft-gold);
+    color: var(--text-main);
+}
+
+.loading-warning .loading-step-header {
+    color: var(--soft-gold);
+}
+
+
+/* ==========================================
+   WARNING BLOCK - DARK MODE
+   ========================================== */
+
+[data-theme="dark"] .loading-warning {
+    background: var(--card-bg);
+    color: var(--text-main);
+    border-color: var(--border-color);
+    border-right-color: var(--soft-gold);
+}
+
+[data-theme="dark"] .loading-warning .loading-step-header {
+    color: var(--soft-gold);
+}
+
+[data-theme="dark"] .loading-warning .loading-step-content {
+    color: var(--text-main);
+}
+
+[data-theme="dark"] .loading-warning strong {
+    color: var(--text-main);
+}
+
+[data-theme="dark"] .loading-warning li {
+    color: var(--text-main);
+}
+
+
+/* ==========================================
+   DANGER BLOCK
+   ========================================== */
+
+.loading-danger {
+    background: var(--soft-surface);
+    border-right-color: var(--soft-red);
+}
+
+.loading-danger .loading-step-header {
+    color: var(--soft-red);
+}
+
+
+/* ==========================================
+   ALERT BOX
+   ========================================== */
+
+.loading-alert {
+    background: var(--soft-surface);
+    border-right: 4px solid var(--soft-red);
+    color: var(--text-main);
+    border-radius: 9px;
+    padding: 15px 18px;
+    margin-top: 20px;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.loading-alert strong {
+    display: block;
+    color: var(--soft-red);
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 768px) {
+
+    .loading-page {
+        padding: 10px 5px 25px;
+    }
+
+    .loading-card {
+        padding: 18px;
+        border-radius: 12px;
+    }
+
+    .loading-title {
+        font-size: 21px;
+    }
+
+    .loading-inner-nav {
+        gap: 7px;
+    }
+
+    .loading-inner-tab {
+        flex: 1 1 42%;
+        padding: 9px 10px;
+    }
+
+    .loading-step {
+        padding: 15px;
+    }
+
+    .loading-step-content {
+        font-size: 14px;
+    }
+
+}
+</style>
+
+
+<div class="loading-page">
+
+    <div class="loading-card">
+
+        <!-- ==========================================
+             MAIN TITLE
+             ========================================== -->
+
+        <h2 class="loading-title">
+            دليل تعليمات التحميل والتجهيز
+            <br>
+            <span>(Loading Instructions)</span>
+        </h2>
+
+
+        <!-- ==========================================
+             GENERAL INSTRUCTIONS
+             ========================================== -->
+
+        <div class="loading-step loading-warning">
+
+            <div class="loading-step-header">
+                أولًا: التعليمات العامة لجميع أنواع التحميل
+            </div>
+
+            <div class="loading-step-content">
+
+                <ul>
+
+                    <li>
+                        <strong>النظافة والتجهيز:</strong>
+                        التأكد من نظافة وسلامة وسيلة التحميل قبل البدء،
+                        ونظافة البالتات والباجزات والشكاير حسب نوع التحميل،
+                        وخلوها من الشحوم والأتربة والثقوب.
+                    </li>
+
+                    <li>
+                        <strong>جودة التصوير:</strong>
+                        التأكيد على جودة ووضوح جميع الصور الملتقطة أثناء التحميل.
+                        يجب أن تظهر جميع البيانات بدقة، وفي حالة عدم وضوح أي صورة
+                        يتم حذفها وإعادة تصويرها.
+                    </li>
+
+                    <li>
+                        <strong>المستندات والتقارير:</strong>
+                        ضرورة كتابة رقم الإخطار على جميع أوراق التجهيزات أو التحميلات.
+                        الشخص الذي قام بالتجهيز أو التحميل مسؤول عن إغلاقه بنفسه
+                        في التقرير وتسجيل البيانات بدقة.
+                    </li>
+
+                    <li>
+                        <strong>التتبع:</strong>
+                        الالتزام بعملية أخذ وتسجيل الأرقام في جميع عمليات التحميل
+                        لضمان سهولة التتبع والمراجعة.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==========================================
+             INNER TABS
+             ========================================== -->
+
+        <div class="loading-inner-nav">
+
+            <button
+                class="loading-inner-tab active"
+                onclick="switchLoadingTab(event, 'load-export-bb')">
+                بجزات التصدير
+            </button>
+
+            <button
+                class="loading-inner-tab"
+                onclick="switchLoadingTab(event, 'load-export-bags')">
+                شكاير التصدير
+            </button>
+
+            <button
+                class="loading-inner-tab"
+                onclick="switchLoadingTab(event, 'load-local-bb')">
+                بجزات المحلي
+            </button>
+
+            <button
+                class="loading-inner-tab"
+                onclick="switchLoadingTab(event, 'load-local-bags')">
+                شكاير المحلي
+            </button>
+
+            <button
+                class="loading-inner-tab"
+                onclick="switchLoadingTab(event, 'load-bulk')">
+                البالك
+            </button>
+
+            <button
+                class="loading-inner-tab"
+                onclick="switchLoadingTab(event, 'load-alerts')">
+                التنبيهات العامة
+            </button>
+
+        </div>
+
+
+        <!-- ==========================================
+             TAB 1 - EXPORT BIG BAGS
+             ========================================== -->
+
+        <div
+            id="load-export-bb"
+            class="loading-content active">
+
+            <div class="loading-step">
+
+                <div class="loading-step-header">
+                    تعليمات تحميل بجزات التصدير -
+                    طريقة التصوير أثناء التحميل
+                </div>
+
+                <div class="loading-step-content">
+
+                    <ol>
+
+                        <li>
+                            <strong>الصورة الأولى:</strong>
+                            تصوير الكونتر وهو فارغ مع ظهور رقم الكونتر بوضوح،
+                            والتأكد من نظافة الحاوية وخلوها من الشحوم والثقوب والعيوب.
+                        </li>
+
+                        <li>
+                            <strong>الصورة الثانية:</strong>
+                            التصوير بعد تحميل أول بالتتين.
+                        </li>
+
+                        <li>
+                            <strong>الصورة الثالثة:</strong>
+                            التصوير بعد تحميل ثاني بالتتين.
+                        </li>
+
+                        <li>
+                            <strong>الصورة الرابعة:</strong>
+                            التصوير بعد تحميل ثالث بالتتين.
+                        </li>
+
+                        <li>
+                            <strong>الصورة الخامسة:</strong>
+                            التصوير بعد تحميل رابع بالتتين.
+                        </li>
+
+                        <li>
+                            <strong>الصورة السادسة:</strong>
+                            التصوير بعد تحميل خامس بالتتين.
+                        </li>
+
+                        <li>
+                            <strong>الصورة السابعة:</strong>
+                            تصوير باب الحاوية وهو مغلق من اليمين فقط،
+                            مع ظهور ورقة لصق الشركة على الناحية الأخرى.
+                        </li>
+
+                        <li>
+                            <strong>الصورة الثامنة:</strong>
+                            تصوير بابي الحاوية مغلقين بالكامل،
+                            مع ضرورة ظهور سيل الغلق على الباب بوضوح.
+                        </li>
+
+                        <li>
+                            <strong>الصورة التاسعة:</strong>
+                            تصوير الباتش الموجود على البجزة للتأكد من صحة عملية التحميل.
+                        </li>
+
+                    </ol>
+
+
+                    <div class="loading-alert">
+
+                        <strong>
+                            ⚠️ ملاحظة هامة خاصة بالبجزات السادة:
+                        </strong>
+
+                        يُمنع منعًا باتًا وضع أي ورقة تحميل أو ورق تعريف للمنتج
+                        أو أي ملصق يحمل شعار إيفر جرو، سواء داخل الحاوية أو خارجها
+                        أو على أي بجزة.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==========================================
+             TAB 2 - EXPORT SMALL BAGS
+             ========================================== -->
+
+        <div
+            id="load-export-bags"
+            class="loading-content">
+
+            <div class="loading-step">
+
+                <div class="loading-step-header">
+                    تعليمات تحميل شكاير التصدير -
+                    طريقة التصوير أثناء التحميل
+                </div>
+
+                <div class="loading-step-content">
+
+                    <ol>
+
+                        <li>
+                            <strong>الصورة الأولى:</strong>
+                            تصوير الكونتر وهو فارغ مع ظهور رقم الكونتر بوضوح،
+                            والتأكد من نظافة الحاوية وخلوها من الشحوم والثقوب والعيوب.
+                        </li>
+
+                        <li>
+                            <strong>الصورة الثانية:</strong>
+                            التصوير بعد أول رصّة.
+                        </li>
+
+                        <li>
+                            <strong>الصورة الثالثة:</strong>
+                            التصوير بعد ثاني رصّة.
+                        </li>
+
+                        <li>
+                            <strong>الصورة الرابعة:</strong>
+                            التصوير بعد ثالث رصّة.
+                        </li>
+
+                        <li>
+                            <strong>الصورة الخامسة:</strong>
+                            التصوير بعد رابع رصّة.
+                        </li>
+
+                        <li>
+                            <strong>الصورة السادسة:</strong>
+                            التصوير بعد خامس رصّة.
+                        </li>
+
+                        <li>
+                            <strong>الصورة السابعة:</strong>
+                            تصوير باب الحاوية وهو مغلق من اليمين فقط،
+                            مع ظهور ورقة لصق الشركة على الناحية الأخرى.
+                        </li>
+
+                        <li>
+                            <strong>الصورة الثامنة:</strong>
+                            تصوير بابي الحاوية مغلقين بالكامل.
+                        </li>
+
+                        <li>
+                            <strong>الصورة التاسعة:</strong>
+                            تصوير الباتش والشيكارة.
+                        </li>
+
+                    </ol>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==========================================
+             TAB 3 - LOCAL BIG BAGS
+             ========================================== -->
+
+        <div
+            id="load-local-bb"
+            class="loading-content">
+
+            <div class="loading-step">
+
+                <div class="loading-step-header">
+                    تعليمات تحميل بجزات المحلي
+                </div>
+
+                <div class="loading-step-content">
+
+                    <p>
+                        <strong>
+                            أولًا: مراجعة الكمية والمواصفات
+                        </strong>
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            التأكد من أن الكمية التي سيتم تجهيزها للتحميل المحلي
+                            مطابقة للمواصفات المطلوبة من العميل كيميائياً وفيزيائياً.
+                        </li>
+
+                        <li>
+                            التأكد من ذلك من خلال مراجعة القفزانات وألوانها
+                            والأرقام الموجودة على كل بجزة لضمان المطابقة.
+                        </li>
+
+                    </ul>
+
+
+                    <p style="margin-top: 12px;">
+                        <strong>
+                            ثانيًا: تجهيز الباتش
+                        </strong>
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            تجهيز باتش مناسب للشهر الذي سيتم خلاله تحميل البجزات.
+                        </li>
+
+                        <li>
+                            التأكد من سلامة الباتش أثناء عملية الرش
+                            ووضوح جميع الأرقام والبيانات على الباتش.
+                        </li>
+
+                    </ul>
+
+
+                    <p style="margin-top: 12px;">
+                        <strong>
+                            ثالثًا: فحص البجزات قبل التحميل
+                        </strong>
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            التأكد من خلو البجزة من القطوع، التلف، الشحوم،
+                            الأتربة، والشوائب.
+                        </li>
+
+                        <li>
+                            التأكد من النظافة العامة للبجزة وخلوها من أي عيوب
+                            تؤثر على جودة المنتج أو مطابقته.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==========================================
+             TAB 4 - LOCAL SMALL BAGS
+             ========================================== -->
+
+        <div
+            id="load-local-bags"
+            class="loading-content">
+
+            <div class="loading-step">
+
+                <div class="loading-step-header">
+                    تعليمات تحميل شكاير المحلي
+                </div>
+
+                <div class="loading-step-content">
+
+                    <p>
+                        <strong>
+                            أولًا: مراجعة الكمية والمواصفات
+                        </strong>
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            مراجعة المواصفات المطلوبة بعناية، فقد يكون المنتج
+                            مخصصًا للسوق المحلي ولكنه خارج المواصفة المطلوبة
+                            للعميل لأي سبب.
+                        </li>
+
+                        <li>
+                            التأكد من مطابقة المنتج كيميائياً وفيزيائياً
+                            لمتطلبات العميل.
+                        </li>
+
+                        <li>
+                            في حالة خروج الشكاير على بالتات، يجب التأكد من أن
+                            الشكاير والبالتات مطابقة للمواصفات، وسليمة ونظيفة
+                            وجاهزة للتحميل.
+                        </li>
+
+                    </ul>
+
+
+                    <p style="margin-top: 12px;">
+                        <strong>
+                            ثانيًا: مراجعة الباتشات
+                        </strong>
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            مراجعة الباتشات بالكامل قبل بدء التحميل
+                            والتأكد من صحة ووضوح البيانات.
+                        </li>
+
+                        <li>
+                            كتابة وتسجيل كل جزء أو باتش بشكل منفصل في التقرير
+                            لضمان سهولة المراجعة والتتبع.
+                        </li>
+
+                    </ul>
+
+
+                    <p style="margin-top: 12px;">
+                        <strong>
+                            ثالثًا: فحص الشكاير والبالتات قبل التحميل
+                        </strong>
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            خلو الشكاير من التلف، القطوع، الشحوم، والأتربة
+                            مع التأكد من سلامة التغليف.
+                        </li>
+
+                        <li>
+                            في حالة تحميل الشكاير على بالتات:
+                            التأكد من نظافة وسلامة البالتات،
+                            جودة رص الشكاير، وثبات الشكاير بشكل مناسب.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==========================================
+             TAB 5 - BULK
+             ========================================== -->
+
+        <div
+            id="load-bulk"
+            class="loading-content">
+
+            <div class="loading-step">
+
+                <div class="loading-step-header">
+                    تعليمات تحميلات البالك
+                </div>
+
+                <div class="loading-step-content">
+
+                    <p>
+                        تُطبق على تحميلات البالك جميع التعليمات العامة للنظافة
+                        وسلامة الحاوية ومتابعة عملية التحميل بالإضافة للآتي:
+                    </p>
+
+
+                    <p style="margin-top: 12px;">
+                        <strong>
+                            أولًا: تجهيز الحاوية
+                        </strong>
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            التأكد من نظافة وسلامة الحاوية وخلوها من الأتربة
+                            والشحوم والثقوب.
+                        </li>
+
+                        <li>
+                            تصوير الحاوية وهي فارغة قبل بدء التحميل
+                            مع ظهور رقم الحاوية بوضوح.
+                        </li>
+
+                    </ul>
+
+
+                    <p style="margin-top: 12px;">
+                        <strong>
+                            ثانيًا: تجهيز الكونتر باج والألواح الخشبية
+                        </strong>
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            وضع الكونتر باج الفارغة داخل الحاوية وإضافة وتجهيز
+                            الألواح الخشبية بالطريقة المتبعة.
+                        </li>
+
+                        <li>
+                            تصوير الحاوية بعد وضع الكونتر باج والألواح
+                            وقبل بدء التحميل.
+                        </li>
+
+                    </ul>
+
+
+                    <p style="margin-top: 12px;">
+                        <strong>
+                            ثالثًا: متابعة عملية التحميل والتصوير
+                        </strong>
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            متابعة دخول المنتج والتأكد من سلامته،
+                            والتأكد من أن جميع البجزات تحمل نفس الأفيز المتبع
+                            وعدم خلط منتجات مختلفة.
+                        </li>
+
+                        <li>
+
+                            <strong>ترتيب الصور:</strong>
+
+                            <ol style="margin-top: 6px;">
+
+                                <li>
+                                    تصوير الحاوية فارغة.
+                                </li>
+
+                                <li>
+                                    تصوير الحاوية بعد وضع الكونتر باج
+                                    والألواح الخشبية.
+                                </li>
+
+                                <li>
+                                    تصوير مراحل التحميل أثناء سير العملية.
+                                </li>
+
+                                <li>
+                                    تصوير الحاوية والمنتج بداخلها بالكامل
+                                    بعد الانتهاء.
+                                </li>
+
+                                <li>
+                                    تصوير باب الحاوية
+                                    (مرة باب واحد، ومرة البابين مغلقين
+                                    مع ظهور سيل الغلق).
+                                </li>
+
+                            </ol>
+
+                        </li>
+
+                    </ul>
+
+
+                    <div class="loading-alert">
+
+                        <strong>
+                            ⚠️ ملاحظة هامة:
+                        </strong>
+
+                        يتم خصم وزن الألواح الخشبية في نهاية الطلبية،
+                        ويكون مسؤولًا عن تنفيذ ذلك أمين المخزن المسؤول عن العملية.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==========================================
+             TAB 6 - GENERAL ALERTS
+             ========================================== -->
+
+        <div
+            id="load-alerts"
+            class="loading-content">
+
+            <div class="loading-step loading-danger">
+
+                <div class="loading-step-header">
+                    التنبيهات والالتزامات العامة
+                </div>
+
+                <div class="loading-step-content">
+
+                    <ul>
+
+                        <li>
+                            عدم تحميل أي كمية قبل التأكد من مطابقتها
+                            للمواصفات المطلوبة.
+                        </li>
+
+                        <li>
+                            مراجعة الباتشات والأرقام والبيانات
+                            قبل بدء التحميل.
+                        </li>
+
+                        <li>
+                            الحفاظ على نظافة المنتج ووسيلة التحميل
+                            طوال العملية.
+                        </li>
+
+                        <li>
+                            الالتزام بجودة التصوير ووضوح جميع البيانات المطلوبة
+                            وإعادة تصوير أي صورة غير واضحة.
+                        </li>
+
+                        <li>
+                            كتابة رقم الإخطار على جميع أوراق التجهيز والتحميل.
+                        </li>
+
+                        <li>
+                            تسجيل البيانات والأرقام بدقة لضمان سهولة
+                            التتبع والمراجعة.
+                        </li>
+
+                        <li>
+                            الشخص المسؤول عن التجهيز أو التحميل مسؤول
+                            عن استكمال وإغلاق التقرير الخاص بالعملية.
+                        </li>
+
+                        <li>
+                            الالتزام بالتعليمات الخاصة بكل نوع تحميل
+                            وعدم تطبيق طريقة تحميل على نوع آخر إلا إذا كانت
+                            تعليمات عامة مشتركة.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* ==========================================
+   LOADING INNER TABS
+   ========================================== */
+
+function switchLoadingTab(evt, targetId) {
+
+    const page = evt.currentTarget.closest('.loading-page');
+
+    if (!page) return;
+
+
+    /* Remove Active From All Tabs */
+
+    page
+        .querySelectorAll('.loading-inner-tab')
+        .forEach(tab => {
+            tab.classList.remove('active');
+        });
+
+
+    /* Add Active To Current Tab */
+
+    evt.currentTarget.classList.add('active');
+
+
+    /* Hide All Contents */
+
+    page
+        .querySelectorAll('.loading-content')
+        .forEach(content => {
+            content.classList.remove('active');
+        });
+
+
+    /* Show Target Content */
+
+    const targetContent =
+        page.querySelector('#' + targetId);
+
+    if (targetContent) {
+        targetContent.classList.add('active');
+    }
+}
+
+
+/* ==========================================
+   SYNC WITH MAIN THEME
+   ========================================== */
+
+(function () {
+
+    const savedTheme =
+        localStorage.getItem("theme") || "light";
+
+    document.documentElement.setAttribute(
+        "data-theme",
+        savedTheme
+    );
+
+})();
+
+</script>

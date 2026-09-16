@@ -1,0 +1,369 @@
+<style>
+    /* =========================================================
+       QC ECOPHOS - Delivery of Warehouse
+       Unified Theme with Main HTML
+       ========================================================= */
+
+    .delivery-page {
+        --delivery-radius-lg: 12px;
+        --delivery-radius-md: 8px;
+
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 10px 0 30px;
+
+        background: var(--bg-main);
+        color: var(--text-main);
+        font-family: 'Tajawal', system-ui, -apple-system, sans-serif;
+        line-height: 1.8;
+    }
+
+    /* ==================== Main Card ==================== */
+
+    .delivery-content-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-top: 3px solid var(--deep-green);
+        border-radius: var(--delivery-radius-lg);
+        padding: 30px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    /* ==================== Page Title ==================== */
+
+    .delivery-title {
+        font-size: 21px;
+        font-weight: 800;
+        color: var(--text-main);
+        padding-bottom: 12px;
+        margin-bottom: 22px;
+        border-bottom: 2px solid var(--emerald-green);
+        line-height: 1.6;
+    }
+
+    /* ==================== Step Blocks ==================== */
+
+    .delivery-step {
+        background: var(--soft-surface);
+        border: 1px solid var(--border-color);
+        border-radius: var(--delivery-radius-md);
+        padding: 18px 22px;
+        margin-bottom: 14px;
+
+        /* RTL: right accent */
+        border-right: 4px solid var(--emerald-green);
+
+        transition:
+            background-color 0.3s ease,
+            border-color 0.3s ease,
+            color 0.3s ease,
+            transform 0.2s ease;
+    }
+
+    .delivery-step:hover {
+        border-right-color: var(--dark-emerald);
+    }
+
+    /* ==================== Step Header ==================== */
+
+    .delivery-step-header {
+        font-size: 16px;
+        font-weight: 800;
+        color: var(--deep-green);
+        margin-bottom: 8px;
+    }
+
+    [data-theme="dark"] .delivery-step-header {
+        color: var(--accent-color);
+    }
+
+    /* ==================== Step Content ==================== */
+
+    .delivery-step-content {
+        color: var(--text-main);
+        font-size: 15px;
+    }
+
+    .delivery-step-content p {
+        margin-bottom: 8px;
+    }
+
+    /* ==================== Lists ==================== */
+
+    .delivery-step-content ul {
+        list-style: none;
+        padding-right: 5px;
+        margin: 0;
+    }
+
+    .delivery-step-content ul li {
+        position: relative;
+        padding-right: 20px;
+        margin-bottom: 7px;
+    }
+
+    .delivery-step-content ul li::before {
+        content: "–";
+        color: var(--emerald-green);
+        font-weight: 800;
+        font-size: 17px;
+
+        position: absolute;
+        right: 0;
+        top: -1px;
+    }
+
+    .delivery-step-content ul li ul {
+        margin-top: 6px;
+        margin-bottom: 6px;
+        padding-right: 12px;
+    }
+
+    .delivery-step-content ul li ul li::before {
+        content: "•";
+        color: var(--success-green);
+    }
+
+    /* ==================== Strong Text ==================== */
+
+    .delivery-step-content strong {
+        color: var(--dark-emerald);
+        font-weight: 800;
+    }
+
+    [data-theme="dark"] .delivery-step-content strong {
+        color: var(--accent-color);
+    }
+
+    /* ==================== Weight Highlight ==================== */
+
+    .delivery-weight {
+        color: var(--emerald-green);
+        font-weight: 800;
+    }
+
+    /* ==================== Responsive ==================== */
+
+    @media (max-width: 768px) {
+
+        .delivery-page {
+            padding: 5px 0 20px;
+        }
+
+        .delivery-content-card {
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .delivery-title {
+            font-size: 18px;
+            margin-bottom: 18px;
+        }
+
+        .delivery-step {
+            padding: 15px;
+            border-right-width: 3px;
+        }
+
+        .delivery-step-header {
+            font-size: 15px;
+        }
+
+        .delivery-step-content {
+            font-size: 14px;
+        }
+    }
+</style>
+
+
+<div class="delivery-page">
+
+    <div class="delivery-content-card">
+
+        <!-- Page Title -->
+        <h2 class="delivery-title">
+            تعليمات عمل: تسليم المنتج المطابق إلى المخزن
+            (Delivery of Conforming Product to Warehouse)
+        </h2>
+
+
+        <!-- =====================================================
+             Section 1: Big Bags
+             ===================================================== -->
+
+        <div class="delivery-step">
+
+            <div class="delivery-step-header">
+                أولاً: في حالة البجزات (Big Bags)
+            </div>
+
+            <div class="delivery-step-content">
+
+                <ul>
+
+                    <li>
+                        <strong>مراجعة القفيز:</strong>
+                        مراجعة لون القفيز والتأكد من أنه تابع للمجموعة الجاري تسليمها.
+                    </li>
+
+                    <li>
+                        <strong>النظافة:</strong>
+                        التأكد من نظافة البجزات وخلوها من أي اتساخ أو شحوم أو مظهر يغير شكل البجزة أو يجعلها غير مطابقة.
+                    </li>
+
+                    <li>
+                        <strong>سلامة البجزة:</strong>
+                        التأكد من عدم وجود أي قطع بالبجزة.
+                    </li>
+
+                    <li>
+                        <strong>معايرة الميزان:</strong>
+
+                        <ul>
+
+                            <li>
+                                يتم معايرة الميزان قبل وأثناء عملية تعديل موازين البجزات وعند الشك في عدم مطابقة الميزان.
+                            </li>
+
+                            <li>
+                                استدعاء قسم الأجهزة عند حدوث أي خطأ في قراءة الميزان للسنجة العيارية حسب وزنها المكتوب في شهادة المعايرة الخارجية.
+                            </li>
+
+                        </ul>
+
+                    </li>
+
+                    <li>
+                        <strong>التتبع:</strong>
+                        يتم أخذ أرقام البجزات لسهولة التتبع، ويجب تحري الدقة في الرقم حتى لا يحدث خطأ بعد ذلك.
+                    </li>
+
+                    <li>
+                        <strong>اشتراطات التعديل:</strong>
+
+                        <ul>
+
+                            <li>
+                                أثناء تعديل موازين البجزات يتم التعديل من نفس نوع المنتج.
+                            </li>
+
+                            <li>
+                                التأكد من نظافة وسلامة البجزة التي يتم التعديل منها.
+                            </li>
+
+                            <li>
+                                التأكد من غلق البجزة التي يتم التعديل منها باستمرار في حالة عدم التعديل منها.
+                            </li>
+
+                            <li>
+                                التأكد من عدم وجود أي منتج على الميزان مما يجعل العامل يخطئ في قراءة الميزان بصورة صحيحة.
+                            </li>
+
+                        </ul>
+
+                    </li>
+
+                    <li>
+                        <strong>وزن البجزة:</strong>
+                        يكون وزن البجزة من
+                        <strong class="delivery-weight">
+                            1015 إلى 1020 كجم
+                        </strong>
+                        (بدون بالتة).
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+
+
+        <!-- =====================================================
+             Section 2: Small Bags
+             ===================================================== -->
+
+        <div class="delivery-step">
+
+            <div class="delivery-step-header">
+                ثانياً: في حالة الشكاير (Small Bags / Pallets)
+            </div>
+
+            <div class="delivery-step-content">
+
+                <ul>
+
+                    <li>
+                        <strong>الوزن قبل التسليم:</strong>
+                        يتم وزن البالتة قبل تسليمها للمخزن.
+                    </li>
+
+                    <li>
+                        <strong>معايرة الميزان:</strong>
+
+                        <ul>
+
+                            <li>
+                                يتم معايرة الميزان قبل وأثناء عملية تعديل موازين الشكاير وعند الشك في عدم مطابقة الميزان.
+                            </li>
+
+                            <li>
+                                استدعاء قسم الأجهزة عند حدوث أي خطأ في قراءة الميزان للسنجة العيارية حسب وزنها المكتوب في شهادة المعايرة الخارجية.
+                            </li>
+
+                        </ul>
+
+                    </li>
+
+                    <li>
+                        <strong>التسجيل والتتبع:</strong>
+                        تسجيل رقم البالتة لسهولة التتبع.
+                    </li>
+
+                    <li>
+                        <strong>التصنيف:</strong>
+                        يتم تصنيف كل نوع حسب الباتش الموجود على الشكاير.
+                    </li>
+
+                    <li>
+                        <strong>التجنيب والتبليغ:</strong>
+                        عند الشك في عدم مطابقة المنتج أو وجود مشكلة أو اختلاط الباتشات في نفس البالتة، يتم تجنيب البالتة والتبليغ فوراً.
+                    </li>
+
+                    <li>
+                        <strong>وزن البالتة:</strong>
+                        يكون وزن البالتة من
+                        <strong class="delivery-weight">
+                            1015 إلى 1030 كجم
+                        </strong>
+                        ، وذلك تقديرًا لحجم البالتة وكتلتها التقديرية.
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+    /* =========================================================
+       Theme Sync
+       Uses the SAME key as Main HTML:
+       localStorage.getItem("theme")
+       ========================================================= */
+
+    (function syncDeliveryTheme() {
+
+        const currentTheme =
+            localStorage.getItem("theme") || "light";
+
+        document.documentElement.setAttribute(
+            "data-theme",
+            currentTheme
+        );
+
+    })();
+</script>

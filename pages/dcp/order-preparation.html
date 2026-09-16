@@ -1,0 +1,415 @@
+<style>
+/* =========================
+   ORDER PREPARATION PAGE
+   ========================= */
+
+.order-prep-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 10px 40px;
+    background: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Tajawal', Arial, sans-serif;
+    line-height: 1.8;
+}
+
+.order-prep-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-top: 4px solid var(--emerald-green);
+    border-radius: 14px;
+    padding: 30px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* العنوان في المنتصف */
+.order-prep-title {
+    text-align: center;
+    color: var(--deep-green);
+    font-size: 26px;
+    font-weight: 800;
+    margin: 0 0 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .order-prep-title {
+    color: var(--accent-color);
+}
+
+/* التابات الداخلية */
+.order-prep-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.order-prep-tab {
+    padding: 11px 22px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--soft-surface);
+    color: var(--text-sub);
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.25s ease;
+}
+
+.order-prep-tab:hover {
+    background: var(--mint-green);
+    color: var(--deep-green);
+}
+
+.order-prep-tab.active {
+    background: var(--emerald-green);
+    color: #ffffff;
+    border-color: var(--emerald-green);
+}
+
+/* محتوى التاب */
+.order-prep-content {
+    display: none;
+}
+
+.order-prep-content.active {
+    display: block;
+}
+
+.order-prep-section {
+    background: var(--soft-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.order-prep-section h3 {
+    margin-top: 0;
+    color: var(--deep-green);
+    font-size: 20px;
+}
+
+[data-theme="dark"] .order-prep-section h3 {
+    color: var(--accent-color);
+}
+
+.order-prep-section ul,
+.order-prep-section ol {
+    padding-right: 25px;
+}
+
+.order-prep-section li {
+    margin-bottom: 8px;
+}
+
+.order-prep-alert {
+    padding: 16px 20px;
+    border-radius: 10px;
+    background: var(--mint-green);
+    border-right: 4px solid var(--emerald-green);
+    color: var(--text-main);
+    margin-top: 20px;
+}
+
+[data-theme="dark"] .order-prep-alert {
+    background: var(--soft-surface);
+}
+
+@media (max-width: 700px) {
+    .order-prep-page {
+        padding: 10px 5px 25px;
+    }
+
+    .order-prep-card {
+        padding: 18px;
+    }
+
+    .order-prep-title {
+        font-size: 21px;
+    }
+
+    .order-prep-tab {
+        width: 100%;
+        text-align: center;
+    }
+}
+</style>
+
+
+<div class="order-prep-page">
+
+    <div class="order-prep-card">
+
+        <!-- العنوان الرئيسي -->
+        <h2 class="order-prep-title">
+            تعليمات عمل: تجهيز الطلبيات
+            <br>
+            <span>(Order Preparation)</span>
+        </h2>
+
+
+        <!-- التابات الداخلية -->
+        <div class="order-prep-tabs">
+
+            <button
+                class="order-prep-tab active"
+                onclick="switchOrderPrepTab('big-bags', this)">
+                تجهيز البجزات (Big Bags)
+            </button>
+
+            <button
+                class="order-prep-tab"
+                onclick="switchOrderPrepTab('small-bags', this)">
+                تجهيز الشكاير (Small Bags)
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             BIG BAGS
+        ========================== -->
+
+        <div id="big-bags"
+             class="order-prep-content active">
+
+            <div class="order-prep-section">
+
+                <h3>
+                    المتطلبات العامة
+                </h3>
+
+                <ul>
+                    <li>
+                        التأكد من أن المنتج مطابق للمواصفات قبل بدء التجهيز.
+                    </li>
+
+                    <li>
+                        التأكد من نظافة منطقة العمل وخلوها من أي مواد غريبة.
+                    </li>
+
+                    <li>
+                        التأكد من سلامة ونظافة الـ Big Bags المستخدمة.
+                    </li>
+
+                    <li>
+                        مراجعة بيانات المنتج والـ Batch Number قبل بدء التجهيز.
+                    </li>
+
+                    <li>
+                        التأكد من أن ترتيب الشكاير مطابق لترتيب التعبئة من السيلو.
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="order-prep-section">
+
+                <h3>
+                    خطوات التنفيذ التفصيلية
+                </h3>
+
+                <ol>
+
+                    <li>
+                        استلام أمر التجهيز ومراجعته جيدًا.
+                    </li>
+
+                    <li>
+                        التأكد من اسم المنتج والـ Grade والكمية المطلوبة.
+                    </li>
+
+                    <li>
+                        مراجعة أرقام الـ Big Bags والتأكد من مطابقتها للـ Batch.
+                    </li>
+
+                    <li>
+                        إجراء الفحص الظاهري للـ Big Bags قبل التجهيز.
+                    </li>
+
+                    <li>
+                        التأكد من عدم وجود قطع أو ثقوب أو تلف في الأكياس.
+                    </li>
+
+                    <li>
+                        التأكد من صحة بيانات الطباعة الموجودة على الـ Big Bags.
+                    </li>
+
+                    <li>
+                        ترتيب الـ Big Bags طبقًا لتسلسل التعبئة.
+                    </li>
+
+                    <li>
+                        نقل الـ Big Bags إلى منطقة التجهيز بطريقة آمنة.
+                    </li>
+
+                    <li>
+                        التأكد من عدم اختلاط المنتجات أو الـ Batches المختلفة.
+                    </li>
+
+                    <li>
+                        تسجيل أي اختلاف أو حالة غير مطابقة وإبلاغ QC.
+                    </li>
+
+                </ol>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             SMALL BAGS
+        ========================== -->
+
+        <div id="small-bags"
+             class="order-prep-content">
+
+            <div class="order-prep-section">
+
+                <h3>
+                    المتطلبات العامة
+                </h3>
+
+                <ul>
+
+                    <li>
+                        التأكد من مطابقة المنتج للمواصفات المعتمدة.
+                    </li>
+
+                    <li>
+                        التأكد من نظافة منطقة التجهيز.
+                    </li>
+
+                    <li>
+                        التأكد من سلامة الشكاير وعدم وجود تلف أو ثقوب.
+                    </li>
+
+                    <li>
+                        مراجعة بيانات المنتج والـ Batch Number.
+                    </li>
+
+                    <li>
+                        التأكد من عدم اختلاط المنتجات المختلفة.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="order-prep-section">
+
+                <h3>
+                    خطوات التنفيذ التفصيلية
+                </h3>
+
+                <ol>
+
+                    <li>
+                        استلام أمر تجهيز الشكاير.
+                    </li>
+
+                    <li>
+                        مراجعة اسم المنتج والـ Grade والكمية المطلوبة.
+                    </li>
+
+                    <li>
+                        التأكد من بيانات الطباعة على الشكاير.
+                    </li>
+
+                    <li>
+                        فحص الشكاير ظاهريًا قبل استخدامها.
+                    </li>
+
+                    <li>
+                        التأكد من سلامة اللحامات وعدم وجود تسريب.
+                    </li>
+
+                    <li>
+                        ترتيب الشكاير حسب ترتيب الإنتاج والتعبئة.
+                    </li>
+
+                    <li>
+                        التأكد من عدم وجود خلط بين الـ Batches.
+                    </li>
+
+                    <li>
+                        تسجيل أي حالة غير مطابقة وإبلاغ قسم QC.
+                    </li>
+
+                </ol>
+
+            </div>
+
+        </div>
+
+
+        <!-- تنبيه الجودة -->
+        <div class="order-prep-alert">
+
+            <strong>تنبيه جودة:</strong>
+
+            يجب عدم تجهيز أو شحن أي منتج توجد به حالة عدم مطابقة
+            إلا بعد مراجعة قسم QC واتخاذ القرار المناسب طبقًا للإجراءات
+            المعتمدة.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   ORDER PREPARATION TABS
+   ========================= */
+
+function switchOrderPrepTab(tabId, button) {
+
+    document
+        .querySelectorAll('.order-prep-content')
+        .forEach(content => {
+            content.classList.remove('active');
+        });
+
+    document
+        .querySelectorAll('.order-prep-tab')
+        .forEach(tab => {
+            tab.classList.remove('active');
+        });
+
+    const selectedContent = document.getElementById(tabId);
+
+    if (selectedContent) {
+        selectedContent.classList.add('active');
+    }
+
+    if (button) {
+        button.classList.add('active');
+    }
+}
+
+
+/* =========================
+   SYNC WITH MAIN THEME
+   ========================= */
+
+(function () {
+
+    const currentTheme =
+        localStorage.getItem("theme") || "light";
+
+    document.documentElement.setAttribute(
+        "data-theme",
+        currentTheme
+    );
+
+})();
+
+</script>

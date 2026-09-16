@@ -1,0 +1,663 @@
+<style>
+/* ==========================================
+   SPECIFICATIONS PAGE
+   Main Theme Compatible
+   ========================================== */
+
+.specifications-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 10px 40px;
+    background: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Tajawal', Arial, sans-serif;
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   MAIN CARD
+   ========================================== */
+
+.specifications-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-top: 4px solid var(--emerald-green);
+    border-radius: 14px;
+    padding: 30px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+
+/* ==========================================
+   MAIN TITLE
+   ========================================== */
+
+.specifications-title {
+    text-align: center;
+    color: var(--deep-green);
+    font-size: 26px;
+    font-weight: 800;
+    margin: 0 0 28px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--emerald-green);
+}
+
+[data-theme="dark"] .specifications-title {
+    color: var(--accent-color);
+}
+
+
+/* ==========================================
+   TABLE CONTAINER
+   ========================================== */
+
+.specifications-table-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
+    margin-top: 15px;
+
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+
+    background: var(--card-bg);
+}
+
+
+/* ==========================================
+   TABLE
+   ========================================== */
+
+.specifications-table {
+    width: 100%;
+    min-width: 850px;
+
+    border-collapse: collapse;
+
+    text-align: center;
+
+    font-size: 13px;
+}
+
+
+/* Table Header */
+
+.specifications-table th {
+    background: var(--deep-green);
+    color: #ffffff;
+
+    padding: 13px 8px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    border: 1px solid var(--border-color);
+}
+
+
+/* Table Cells */
+
+.specifications-table td {
+    padding: 11px 7px;
+
+    border: 1px solid var(--border-color);
+
+    color: var(--text-main);
+
+    background: var(--card-bg);
+
+    white-space: nowrap;
+
+    vertical-align: middle;
+}
+
+
+/* Alternating Rows */
+
+.specifications-table tbody tr:nth-child(even) td {
+    background: var(--soft-surface);
+}
+
+
+/* Hover */
+
+.specifications-table tbody tr:hover td {
+    background: var(--mint-green);
+}
+
+
+/* Multiline Cells */
+
+.specifications-table td.multiline {
+    white-space: normal;
+    min-width: 190px;
+}
+
+
+/* ==========================================
+   TAG BADGES
+   ========================================== */
+
+.specifications-tag {
+    display: inline-block;
+
+    min-width: 130px;
+
+    padding: 6px 12px;
+
+    border-radius: 7px;
+
+    font-family: 'IBM Plex Mono', monospace;
+
+    font-size: 11.5px;
+
+    font-weight: 700;
+
+    direction: ltr;
+
+    text-align: center;
+
+    white-space: nowrap;
+}
+
+
+/* Green */
+
+.specifications-tag.green {
+    background: var(--green-bg);
+    color: var(--green-text);
+    border: 1px solid var(--green-border);
+}
+
+
+/* Yellow */
+
+.specifications-tag.yellow {
+    background: var(--yellow-bg);
+    color: var(--yellow-text);
+    border: 1px solid var(--yellow-border);
+}
+
+
+/* Green + Yellow */
+
+.specifications-tag.green-yellow {
+    background: var(--green-yellow-bg);
+    color: var(--green-yellow-text);
+    border: 1px solid var(--green-yellow-border);
+}
+
+
+/* White */
+
+.specifications-tag.white {
+    background: var(--white-bg);
+    color: var(--white-text);
+    border: 1px solid var(--white-border);
+}
+
+
+/* Light Blue */
+
+.specifications-tag.blue {
+    background: var(--blue-bg);
+    color: var(--blue-text);
+    border: 1px solid var(--blue-border);
+}
+
+
+/* Red */
+
+.specifications-tag.red {
+    background: var(--red-bg);
+    color: var(--red-text);
+    border: 1px solid var(--red-border);
+}
+
+
+/* ==========================================
+   QUALITY ALERT
+   ========================================== */
+
+.specifications-alert {
+    background: var(--soft-surface);
+
+    border-right: 4px solid var(--soft-red);
+
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
+
+    border-radius: 9px;
+
+    padding: 17px 18px;
+
+    margin-top: 25px;
+
+    color: var(--text-main);
+}
+
+
+.specifications-alert strong.alert-title {
+    display: block;
+
+    color: var(--soft-red);
+
+    font-size: 16px;
+
+    margin-bottom: 8px;
+}
+
+
+.specifications-alert p {
+    margin: 0;
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 768px) {
+
+    .specifications-page {
+        padding: 10px 5px 25px;
+    }
+
+    .specifications-card {
+        padding: 18px;
+        border-radius: 12px;
+    }
+
+    .specifications-title {
+        font-size: 21px;
+    }
+
+    .specifications-table {
+        min-width: 850px;
+        font-size: 12px;
+    }
+
+    .specifications-table th {
+        padding: 10px 6px;
+    }
+
+    .specifications-table td {
+        padding: 9px 5px;
+    }
+
+}
+</style>
+
+
+<div class="specifications-page">
+
+    <div class="specifications-card">
+
+        <!-- ==========================================
+             MAIN TITLE
+             ========================================== -->
+
+        <h2 class="specifications-title">
+            معايير وألوان تقفيز البجزات
+            <br>
+            <span>(DCP Color Coding)</span>
+        </h2>
+
+
+        <!-- ==========================================
+             SPECIFICATIONS TABLE
+             ========================================== -->
+
+        <div class="specifications-table-container">
+
+            <table class="specifications-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            نوع القفيز<br>
+                            (Tag Color)
+                        </th>
+
+                        <th>
+                            ارتفاع البجزة
+                        </th>
+
+                        <th>
+                            الكالسيوم<br>
+                            (Ca%)
+                        </th>
+
+                        <th>
+                            الفلور<br>
+                            (F ppm)
+                        </th>
+
+                        <th>
+                            الفوسفور<br>
+                            (P₂O₅%)
+                        </th>
+
+                        <th>
+                            الكلور<br>
+                            (Cl%)
+                        </th>
+
+                        <th>
+                            الرطوبة<br>
+                            (M.C%)
+                        </th>
+
+                        <th>
+                            وجود شوائب أو أوفر
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    <!-- GREEN -->
+
+                    <tr>
+
+                        <td>
+                            <span class="specifications-tag green">
+                                Green Tag
+                            </span>
+                        </td>
+
+                        <td>
+                            أقل من 105 سم
+                        </td>
+
+                        <td>
+                            أعلى من 26% (وحتى 27%)
+                        </td>
+
+                        <td>
+                            من 0 إلى 1600
+                        </td>
+
+                        <td>
+                            40.5% فأكثر (مفتوح)
+                        </td>
+
+                        <td>
+                            1%
+                        </td>
+
+                        <td>
+                            3%
+                        </td>
+
+                        <td>
+                            لا يوجد
+                        </td>
+
+                    </tr>
+
+
+                    <!-- YELLOW -->
+
+                    <tr>
+
+                        <td>
+                            <span class="specifications-tag yellow">
+                                Yellow Tag
+                            </span>
+                        </td>
+
+                        <td>
+                            أعلى من 105 سم
+                        </td>
+
+                        <td>
+                            أعلى من 26% (وحتى 27%)
+                        </td>
+
+                        <td>
+                            من 0 إلى 1600
+                        </td>
+
+                        <td>
+                            40.5% فأكثر
+                        </td>
+
+                        <td>
+                            1%
+                        </td>
+
+                        <td>
+                            3%
+                        </td>
+
+                        <td>
+                            لا يوجد
+                        </td>
+
+                    </tr>
+
+
+                    <!-- GREEN + YELLOW -->
+
+                    <tr>
+
+                        <td>
+                            <span class="specifications-tag green-yellow">
+                                Green &amp; Yellow Tag
+                            </span>
+                        </td>
+
+                        <td>
+                            أي ارتفاع
+                        </td>
+
+                        <td class="multiline">
+                            أقل من 26%
+                            <br>
+                            (من 23% إلى أقل من 26%)
+                        </td>
+
+                        <td>
+                            من 0 إلى 1600
+                        </td>
+
+                        <td>
+                            40.5% فأكثر
+                        </td>
+
+                        <td>
+                            1%
+                        </td>
+
+                        <td>
+                            3%
+                        </td>
+
+                        <td>
+                            لا يوجد
+                        </td>
+
+                    </tr>
+
+
+                    <!-- WHITE -->
+
+                    <tr>
+
+                        <td>
+                            <span class="specifications-tag white">
+                                White Tag
+                            </span>
+                        </td>
+
+                        <td>
+                            أي ارتفاع
+                        </td>
+
+                        <td>
+                            من 23% إلى 27%
+                        </td>
+
+                        <td>
+                            من 1600 إلى 1800
+                        </td>
+
+                        <td>
+                            40.5% فأكثر
+                        </td>
+
+                        <td>
+                            1%
+                        </td>
+
+                        <td>
+                            3%
+                        </td>
+
+                        <td>
+                            بنسبة بسيطة
+                        </td>
+
+                    </tr>
+
+
+                    <!-- LIGHT BLUE -->
+
+                    <tr>
+
+                        <td>
+                            <span class="specifications-tag blue">
+                                Light Blue Tag
+                            </span>
+                        </td>
+
+                        <td>
+                            أي ارتفاع
+                        </td>
+
+                        <td>
+                            أعلى من 27%
+                        </td>
+
+                        <td>
+                            من 0 إلى 1600
+                        </td>
+
+                        <td>
+                            40.5% فأكثر
+                        </td>
+
+                        <td>
+                            1%
+                        </td>
+
+                        <td>
+                            3%
+                        </td>
+
+                        <td>
+                            لا يوجد
+                        </td>
+
+                    </tr>
+
+
+                    <!-- RED -->
+
+                    <tr>
+
+                        <td>
+                            <span class="specifications-tag red">
+                                Red Tag
+                            </span>
+                        </td>
+
+                        <td>
+                            أي ارتفاع
+                        </td>
+
+                        <td
+                            colspan="5"
+                            class="multiline">
+
+                            ما يخالف هذه المواصفة كلياً
+                            <br>
+                            (أو زيادة الفلور عن 1600 ppm
+                            للبجزة ذات القفيز اللبني)
+
+                        </td>
+
+                        <td class="multiline">
+
+                            موجود بنسبة غير مسموح بها
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- ==========================================
+             QUALITY ALERT
+             ========================================== -->
+
+        <div class="specifications-alert">
+
+            <strong class="alert-title">
+                تنبيه هام وملاحظة حرجة (Quality Alert):
+            </strong>
+
+            <p>
+
+                <strong>
+                    القفيز الأحمر (Red Tag):
+                </strong>
+
+                يتم تقفيز البجزة باللون الأحمر فوراً
+                في حالة زيادة نسبة الفلور عن 1600 ppm
+                للبجزة ذات القفيز اللبني أو في حال وجود
+                ما يخالف هذه المواصفة كلياً.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* ==========================================
+   SYNC WITH MAIN THEME
+   ========================================== */
+
+(function () {
+
+    const savedTheme =
+        localStorage.getItem("theme") || "light";
+
+    document.documentElement.setAttribute(
+        "data-theme",
+        savedTheme
+    );
+
+})();
+
+</script>
