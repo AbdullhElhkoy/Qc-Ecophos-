@@ -1,3 +1,4 @@
+
 <style>
   /* Local Component Styles utilizing Global CSS Variables */
   .sop-container {
@@ -162,19 +163,56 @@
     color: var(--text-main);
     display: inline-block;
   }
+
+  /* Company Bag Image */
+  .company-bag-image {
+    margin-top: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: var(--card-bg);
+    text-align: center;
+  }
+
+  .company-bag-image img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .company-bag-caption {
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-main);
+    background-color: var(--soft-surface);
+    border-bottom: 1px solid var(--border-color);
+  }
 </style>
 
 <div class="sop-container">
   <div class="sop-card">
-    <h2 class="sop-title">تعليمات عمل: تعبئة الشكاير (Filling Small Bags)</h2>
+    <h2 class="sop-title">
+      تعليمات عمل: تعبئة الشكاير (Filling Small Bags)
+    </h2>
 
     <!-- Step 1 -->
     <div class="step-block">
-      <div class="step-header">ضوابط واشتراطات التعبئة (Filling Conditions)</div>
+      <div class="step-header">
+        ضوابط واشتراطات التعبئة (Filling Conditions)
+      </div>
+
       <div class="step-content">
-        <p>تتم تعبئة الشكاير عن طريق إعادة التعبئة من البجزات المطابقة أو خارج المواصفة وفقاً للضوابط التالية:</p>
+        <p>
+          تتم تعبئة الشكاير عن طريق إعادة التعبئة من البجزات المطابقة أو خارج المواصفة وفقاً للضوابط التالية:
+        </p>
+
         <ul>
-          <li><strong>تعبئة الشكاير المحلي:</strong> تُعبأ من بجزات ذات قفيز:
+          <li>
+            <strong>تعبئة الشكاير المحلي:</strong>
+            تُعبأ من بجزات ذات قفيز:
             <ul>
               <li><span class="badge-code">White Tag</span></li>
               <li><span class="badge-code">Yellow Tag</span></li>
@@ -182,19 +220,30 @@
               <li><span class="badge-code">Green & Yellow Tag</span></li>
             </ul>
           </li>
-          <li><strong>تعبئة الشكاير التصدير:</strong> تُعبأ من بجزات ذات قفيز:
+
+          <li>
+            <strong>تعبئة الشكاير التصدير:</strong>
+            تُعبأ من بجزات ذات قفيز:
             <ul>
               <li><span class="badge-code">Yellow Tag</span></li>
               <li><span class="badge-code">Green Tag</span></li>
               <li><span class="badge-code">Green & Yellow Tag</span></li>
             </ul>
           </li>
-          <li><strong>تعبئة الشكاير لصالح نيوهوب:</strong> تُعبأ من بجزات ذات قفيز (فقط):
+
+          <li>
+            <strong>تعبئة الشكاير لصالح نيوهوب:</strong>
+            تُعبأ من بجزات ذات قفيز (فقط):
             <ul>
               <li><span class="badge-code">Green & Yellow Tag</span></li>
             </ul>
           </li>
-          <li><strong>تعبئة الشكاير خارج المواصفة:</strong> عند تعبئة شكاير خارج المواصفة، يتم مراجعة الباتش المناسب على الشكاير التي يتم تعبئتها حسب الطريقة المتبعة. وتشمل معايير خارج المواصفة:
+
+          <li>
+            <strong>تعبئة الشكاير خارج المواصفة:</strong>
+            عند تعبئة شكاير خارج المواصفة، يتم مراجعة الباتش المناسب على الشكاير التي يتم تعبئتها حسب الطريقة المتبعة.
+
+            وتشمل معايير خارج المواصفة:
             <ul>
               <li><span class="badge-code">P₂O₅</span></li>
               <li><span class="badge-code">Ca</span></li>
@@ -203,7 +252,10 @@
               <li><span class="badge-code">IM</span></li>
               <li><span class="badge-code">Over</span></li>
             </ul>
-            <div class="note-highlight">يجوز أن يجتمع عنصران في البجزة إلا الفلور والكالسيوم لأنه يكون غير مطابق، مع الاختيار بين أحدهما في الباتش حسب المتاح.</div>
+
+            <div class="note-highlight">
+              يجوز أن يجتمع عنصران في البجزة إلا الفلور والكالسيوم لأنه يكون غير مطابق، مع الاختيار بين أحدهما في الباتش حسب المتاح.
+            </div>
           </li>
         </ul>
       </div>
@@ -211,19 +263,34 @@
 
     <!-- Step 2 -->
     <div class="step-block">
-      <div class="step-header">سحب عينات الشكاير (Sampling Procedure)</div>
+      <div class="step-header">
+        سحب عينات الشكاير (Sampling Procedure)
+      </div>
+
       <div class="step-content">
         <ul>
-          <li>يتم سحب عينة من كل طن (عينة رطوبة) في حالة الشكاير (المحلي، التصدير، نيوهوب).</li>
-          <li>أما الشكاير خارج المواصفة فلا يتم السحب منها.</li>
-          <li>تكون العينة ممثلة لكل طن لأي نوع تعبئة (محلي أو تصدير).</li>
+          <li>
+            يتم سحب عينة من كل طن (عينة رطوبة) في حالة الشكاير (المحلي، التصدير، نيوهوب).
+          </li>
+
+          <li>
+            أما الشكاير خارج المواصفة فلا يتم السحب منها.
+          </li>
+
+          <li>
+            تكون العينة ممثلة لكل طن لأي نوع تعبئة (محلي أو تصدير).
+          </li>
         </ul>
 
         <div class="note-highlight">
-          <span>⚠️ ملحوظة مهمة:</span> لا يتم سحب العينات للشكاير التي تم تعبئتها من بجزات منتجة حديثاً.
+          <span>⚠️ ملحوظة مهمة:</span>
+          لا يتم سحب العينات للشكاير التي تم تعبئتها من بجزات منتجة حديثاً.
         </div>
 
-        <p style="margin-top: 10px;"><strong>وزن الشكارة:</strong></p>
+        <p style="margin-top: 10px;">
+          <strong>وزن الشكارة:</strong>
+        </p>
+
         <ul>
           <li>في حالة المحلي: من 25.15 إلى 25.20 كجم.</li>
           <li>في حالة التصدير: من 25.15 إلى 25.25 كجم.</li>
@@ -233,7 +300,10 @@
 
     <!-- Step 3 -->
     <div class="step-block">
-      <div class="step-header">تحديد الباتش للشكاير (Batch Coding)</div>
+      <div class="step-header">
+        تحديد الباتش للشكاير (Batch Coding)
+      </div>
+
       <div class="qc-table-container">
         <table class="qc-table">
           <thead>
@@ -244,6 +314,7 @@
               <th>خارج المواصفة</th>
             </tr>
           </thead>
+
           <tbody>
             <tr>
               <td><strong>E XX XX XX</strong></td>
@@ -263,19 +334,59 @@
 
     <!-- Step 4 -->
     <div class="step-block">
-      <div class="step-header">تعليمات التشغيل والجودة (Operating & Quality Instructions)</div>
+      <div class="step-header">
+        تعليمات التشغيل والجودة (Operating & Quality Instructions)
+      </div>
+
       <div class="step-content">
         <ul>
-          <li>معرفة الطلبية التي يتم البدء فيها (تصدير، محلي، أو نيوهوب) ومعرفة الباتش والكمية المطلوبة والتي تم تنفيذها.</li>
-          <li>التأكد من سلامة الشكاير والباتش المخصص للطلبية.</li>
-          <li>عند سحب الإنتاج للبجزات المخصصة للتعبئة، يتم التأكد من سلامتها ومطابقة القفيز الموجود عليها لفئة التعبئة المطلوبة (محلي، تصدير، نيوهوب، أو خارج المواصفة).</li>
-          <li>التأكد من نظافة الهوبر والسير الخاص بالماكينة وخلوهما من الشوائب والشحوم التي تلوث مكان التعبئة.</li>
-          <li>التأكد من النظافة الخاصة بالعاملين وعدم الأكل والشرب والتدخين داخل منطقة التعبئة حسب تعليمات Pest Control.</li>
-          <li>كتابة رقم البجزة على شكارة واحدة في منتصف كل جهة.</li>
-          <li>في حالة تعبئة بجزات مطابقة وكانت نتيجة رطوبة طن الشكاير غير مطابقة، يتم كتابة (MC) على شكارة واحدة من كل جهة مع توضيح النتيجة.</li>
-          <li>معايرة الموازين الموجودة في التعبئة ثلاث مرات في الوردية، والتأكد من مطابقة السنجة العيارية لوزنها الخاص بها حسب شهادة المعايرة، وفي حال حدوث أي عطل أو تحريك للميزان يتم إعادتها بغض النظر عن عدد المرات.</li>
+          <li>
+            معرفة الطلبية التي يتم البدء فيها (تصدير، محلي، أو نيوهوب) ومعرفة الباتش والكمية المطلوبة والتي تم تنفيذها.
+          </li>
+
+          <li>
+            التأكد من سلامة الشكاير والباتش المخصص للطلبية.
+          </li>
+
+          <li>
+            عند سحب الإنتاج للبجزات المخصصة للتعبئة، يتم التأكد من سلامتها ومطابقة القفيز الموجود عليها لفئة التعبئة المطلوبة (محلي، تصدير، نيوهوب، أو خارج المواصفة).
+          </li>
+
+          <li>
+            التأكد من نظافة الهوبر والسير الخاص بالماكينة وخلوهما من الشوائب والشحوم التي تلوث مكان التعبئة.
+          </li>
+
+          <li>
+            التأكد من النظافة الخاصة بالعاملين وعدم الأكل والشرب والتدخين داخل منطقة التعبئة حسب تعليمات Pest Control.
+          </li>
+
+          <li>
+            كتابة رقم البجزة على شكارة واحدة في منتصف كل جهة.
+          </li>
+
+          <li>
+            في حالة تعبئة بجزات مطابقة وكانت نتيجة رطوبة طن الشكاير غير مطابقة، يتم كتابة (MC) على شكارة واحدة من كل جهة مع توضيح النتيجة.
+          </li>
+
+          <li>
+            معايرة الموازين الموجودة في التعبئة ثلاث مرات في الوردية، والتأكد من مطابقة السنجة العيارية لوزنها الخاص بها حسب شهادة المعايرة، وفي حال حدوث أي عطل أو تحريك للميزان يتم إعادتها بغض النظر عن عدد المرات.
+          </li>
         </ul>
       </div>
+    </div>
+
+    <!-- Company Bag Image -->
+    <div class="company-bag-image">
+
+      <div class="company-bag-caption">
+        صورة توضيحية لشيكارة الشركة
+      </div>
+
+      <img
+        src="https://drive.google.com/uc?export=view&id=14n0uIh3M4vcby_z_KchCYFnrG5mb8wKg"
+        alt="صورة توضيحية لشيكارة الشركة"
+      >
+
     </div>
 
   </div>
