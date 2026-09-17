@@ -164,31 +164,26 @@
     display: inline-block;
   }
 
-  /* Company Bag Image */
+  /* Company Bag Image Button */
   .company-bag-image {
     margin-top: 20px;
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    overflow: hidden;
-    background-color: var(--card-bg);
     text-align: center;
   }
 
-  .company-bag-image img {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
-
-  .company-bag-caption {
-    padding: 12px;
+  .company-bag-button {
+    display: inline-block;
+    background-color: var(--dark-emerald);
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 6px;
+    text-decoration: none;
     font-size: 16px;
     font-weight: 700;
-    color: var(--text-main);
-    background-color: var(--soft-surface);
-    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.2s ease;
+  }
+
+  .company-bag-button:hover {
+    background-color: var(--emerald-green);
   }
 </style>
 
@@ -375,18 +370,16 @@
       </div>
     </div>
 
-    <!-- Company Bag Image -->
+    <!-- Company Bag Image Button -->
     <div class="company-bag-image">
-
-      <div class="company-bag-caption">
-        صورة توضيحية لشيكارة الشركة
-      </div>
-
-      <img
-        src="https://drive.google.com/uc?export=view&id=14n0uIh3M4vcby_z_KchCYFnrG5mb8wKg"
-        alt="صورة توضيحية لشيكارة الشركة"
+      <a
+        class="company-bag-button"
+        href="https://drive.google.com/file/d/14n0uIh3M4vcby_z_KchCYFnrG5mb8wKg/view?usp=drivesdk"
+        target="_blank"
+        rel="noopener noreferrer"
       >
-
+        صورة توضيحية لشيكارة الشركة
+      </a>
     </div>
 
   </div>
