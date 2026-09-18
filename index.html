@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
+  
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>QC ECOPHOS SYSTEM</title>
+
+  <script>
+    const VALID_TOKEN = "sep2026"; // غيّره كل ما تحب تلغي الروابط القديمة
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("v") !== VALID_TOKEN) {
+      document.write(`
+        <div style="text-align:center;padding:80px 20px;font-family:sans-serif;direction:rtl">
+          <h2>⚠️ Error يوجد عطل فى السيرفر </h2>
+          <p>سيتم الإصلاح في غضون ساعات</p>
+        </div>`);
+      window.stop();
+    }
+  </script>
 
   <style>
     /* ==================== 1. COLOR PALETTE DEFINITIONS ==================== */
