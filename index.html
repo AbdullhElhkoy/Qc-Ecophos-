@@ -6,18 +6,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>QC ECOPHOS SYSTEM</title>
 
-  <script>
-    const VALID_TOKEN = "sep2026"; // غيّره كل ما تحب تلغي الروابط القديمة
-    const params = new URLSearchParams(window.location.search);
-    if (params.get("v") !== VALID_TOKEN) {
-      document.write(`
-        <div style="text-align:center;padding:80px 20px;font-family:sans-serif;direction:rtl">
-          <h2>⚠️ Error يوجد عطل فى السيرفر </h2>
-          <p>سيتم الإصلاح في غضون ساعات</p>
-        </div>`);
-      window.stop();
-    }
-  </script>
+ <script>
+  const VALID_TOKEN = "sep2026"; // غيّره كل ما تحب تلغي الروابط القديمة
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("v") !== VALID_TOKEN) {
+    document.write(`
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <title>404 Not Found</title>
+        <style>
+          body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fff;
+            color: #000;
+            margin: 0;
+            padding: 40px;
+          }
+          h1 {
+            font-size: 24px;
+            font-weight: normal;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+          }
+          p { font-size: 14px; color: #333; }
+        </style>
+      </head>
+      <body>
+        <h1>404 Not Found</h1>
+        <p>The requested URL was not found on this server.</p>
+        <p>Additionally, a 404 Not Found error was encountered while trying to use an ErrorDocument to handle the request.</p>
+      </body>
+      </html>`);
+    window.stop();
+  }
+</script>
 
   <style>
     /* ==================== 1. COLOR PALETTE DEFINITIONS ==================== */
